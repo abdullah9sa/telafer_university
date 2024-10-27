@@ -1,0 +1,558 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-09-22 09:04:34.147371",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_gkhz",
+  "first_name",
+  "second_name",
+  "third_name",
+  "fourth_name",
+  "family_name",
+  "column_break_zjme",
+  "mother_name",
+  "gender",
+  "date_of_birth",
+  "any_parent_deceased",
+  "section_break_fgyb",
+  "blood_type",
+  "criminal_conviction",
+  "employee",
+  "column_break_xyal",
+  "ethnicity",
+  "religion",
+  "section_break_nzqh",
+  "amended_from",
+  "contact_and_adress_tab",
+  "section_break_bhuq",
+  "country_of_origin",
+  "province",
+  "disrict",
+  "address",
+  "column_break_ajww",
+  "phone_number",
+  "email",
+  "emergency_contact_section",
+  "emergency_contact_name",
+  "relation",
+  "column_break_kkkc",
+  "emergency_phone_number",
+  "emergency_email",
+  "qualifications_tab",
+  "column_break_srar",
+  "school_name",
+  "round",
+  "sub_field",
+  "study_type",
+  "column_break_ramo",
+  "exam_number",
+  "graduation_date",
+  "6th_grade_avarage",
+  "6th_grade_avarage_after_addition",
+  "section_break_brpo",
+  "high_school_certificate",
+  "study_info_tab",
+  "status",
+  "faculty",
+  "admission_year",
+  "column_break_zujw",
+  "department",
+  "admission_channel",
+  "stage",
+  "section_break_qyol",
+  "preferred_departments",
+  "documents_tab",
+  "national_card_section",
+  "issue_date",
+  "issuer",
+  "column_break_rfpe",
+  "id_number",
+  "register_number",
+  "nationality_document_section",
+  "certificate_number",
+  "wallet_\u0622umber",
+  "column_break_olre",
+  "document_date",
+  "document_issuer",
+  "residance_card_section",
+  "residance__number",
+  "residance_form_number",
+  "column_break_pxin",
+  "residance_card_issuer",
+  "residance_formation_date",
+  "section_break_pvno",
+  "id_file",
+  "nationality_file",
+  "student_image",
+  "column_break_uxlt",
+  "medical_test",
+  "residence_card"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_gkhz",
+   "fieldtype": "Section Break",
+   "label": "Main Info"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Student",
+   "print_hide": 1,
+   "read_only": 1,
+   "search_index": 1
+  },
+  {
+   "fieldname": "first_name",
+   "fieldtype": "Data",
+   "label": "First Name"
+  },
+  {
+   "fieldname": "second_name",
+   "fieldtype": "Data",
+   "label": "Second Name"
+  },
+  {
+   "fieldname": "third_name",
+   "fieldtype": "Data",
+   "label": "Third Name"
+  },
+  {
+   "fieldname": "fourth_name",
+   "fieldtype": "Data",
+   "label": "Fourth Name"
+  },
+  {
+   "fieldname": "column_break_zjme",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_nzqh",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Select",
+   "label": "Gender",
+   "options": "Male\nFemale"
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "label": "Email"
+  },
+  {
+   "description": "Example : 0770 1111 111",
+   "fieldname": "phone_number",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Phone Number",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_bhuq",
+   "fieldtype": "Section Break",
+   "label": "Address"
+  },
+  {
+   "fieldname": "country_of_origin",
+   "fieldtype": "Link",
+   "label": "Country of Origin",
+   "options": "Country"
+  },
+  {
+   "fieldname": "province",
+   "fieldtype": "Link",
+   "label": "Province",
+   "options": "Province"
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address"
+  },
+  {
+   "fieldname": "documents_tab",
+   "fieldtype": "Tab Break",
+   "label": "Documents"
+  },
+  {
+   "fieldname": "id_file",
+   "fieldtype": "Attach",
+   "label": "ID"
+  },
+  {
+   "fieldname": "student_image",
+   "fieldtype": "Attach",
+   "label": "Student Image"
+  },
+  {
+   "fieldname": "column_break_uxlt",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "medical_test",
+   "fieldtype": "Attach",
+   "label": "Medical Test"
+  },
+  {
+   "fieldname": "residence_card",
+   "fieldtype": "Attach",
+   "label": "Residence Card"
+  },
+  {
+   "fieldname": "study_info_tab",
+   "fieldtype": "Tab Break",
+   "label": "Study Info "
+  },
+  {
+   "fieldname": "qualifications_tab",
+   "fieldtype": "Tab Break",
+   "label": "High School Info"
+  },
+  {
+   "default": "2024",
+   "fieldname": "graduation_date",
+   "fieldtype": "Select",
+   "label": "Graduation Year",
+   "options": "2040\n2039\n2038\n2037\n2036\n2035\n2034\n2033\n2032\n2031\n2030\n2029\n2028\n2027\n2026\n2025\n2024\n2023\n2022\n2021\n2020\n2019\n2018\n2017\n2016\n2015\n2014\n2013\n2012\n2011\n2010\n2009\n2008\n2007\n2006\n2005\n2004\n2003\n2002\n2001\n2000\n1999\n1998\n1997\n1996\n1995\n1994\n1993\n1992\n1991\n1990\n1989\n1988\n1987\n1986\n1985\n1984\n1983\n1982\n1981\n1980"
+  },
+  {
+   "fieldname": "6th_grade_avarage",
+   "fieldtype": "Float",
+   "label": "6th Grade Avarage Before Addition"
+  },
+  {
+   "fieldname": "high_school_certificate",
+   "fieldtype": "Attach",
+   "label": "High School Certificate"
+  },
+  {
+   "fieldname": "emergency_contact_section",
+   "fieldtype": "Section Break",
+   "label": "Emergency Contact"
+  },
+  {
+   "fieldname": "emergency_contact_name",
+   "fieldtype": "Data",
+   "label": "Emergency Contact Name"
+  },
+  {
+   "fieldname": "relation",
+   "fieldtype": "Select",
+   "label": "Relation"
+  },
+  {
+   "fieldname": "column_break_kkkc",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "+964-",
+   "fieldname": "emergency_phone_number",
+   "fieldtype": "Data",
+   "label": "Emergency Phone Number"
+  },
+  {
+   "fieldname": "emergency_email",
+   "fieldtype": "Data",
+   "label": "Emergency Email"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "label": "Status",
+   "options": "Pending\nAccepted"
+  },
+  {
+   "fieldname": "faculty",
+   "fieldtype": "Link",
+   "label": "Faculty",
+   "options": "Faculty"
+  },
+  {
+   "fieldname": "department",
+   "fieldtype": "Link",
+   "label": "Department",
+   "options": "Department"
+  },
+  {
+   "fieldname": "section_break_qyol",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "preferred_departments",
+   "fieldtype": "Table",
+   "label": "Preferred Departments",
+   "options": "Preferred Departments"
+  },
+  {
+   "fieldname": "mother_name",
+   "fieldtype": "Data",
+   "label": "Mother Full Name"
+  },
+  {
+   "fieldname": "section_break_fgyb",
+   "fieldtype": "Section Break",
+   "label": "Demographics"
+  },
+  {
+   "fieldname": "admission_channel",
+   "fieldtype": "Select",
+   "label": "Admission Channel",
+   "options": "General channel\nMartyrs\nTeachers\nAthletes\nCertificate holders\nDistinguished\nPolitical prisoners\nExpatriates\nStudents of Kurdistan Region"
+  },
+  {
+   "fieldname": "religion",
+   "fieldtype": "Select",
+   "label": "Religion",
+   "options": "Muslim\nJew\nChristian\nShabak\nYarsanism\nMandaeism\nYazidis\nOther"
+  },
+  {
+   "fieldname": "admission_year",
+   "fieldtype": "Link",
+   "label": "Admission Year",
+   "options": "Educational Year"
+  },
+  {
+   "fieldname": "column_break_xyal",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "ethnicity",
+   "fieldtype": "Select",
+   "label": "Ethnicity"
+  },
+  {
+   "fieldname": "round",
+   "fieldtype": "Select",
+   "label": "Round",
+   "options": "First\nSecond\nThird"
+  },
+  {
+   "fieldname": "column_break_srar",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "school_name",
+   "fieldtype": "Data",
+   "label": "School Name"
+  },
+  {
+   "fieldname": "issue_date",
+   "fieldtype": "Date",
+   "label": "Issue Date"
+  },
+  {
+   "fieldname": "issuer",
+   "fieldtype": "Data",
+   "label": "Issuer"
+  },
+  {
+   "fieldname": "column_break_rfpe",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "id_number",
+   "fieldtype": "Data",
+   "label": "Id Number"
+  },
+  {
+   "fieldname": "register_number",
+   "fieldtype": "Data",
+   "label": "Register Number"
+  },
+  {
+   "fieldname": "section_break_pvno",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "nationality_file",
+   "fieldtype": "Attach",
+   "label": "Nationality File"
+  },
+  {
+   "fieldname": "family_name",
+   "fieldtype": "Data",
+   "label": "Family Name"
+  },
+  {
+   "fieldname": "any_parent_deceased",
+   "fieldtype": "Select",
+   "label": "Any Parent Deceased",
+   "options": "\nFather\nMother"
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Select",
+   "label": "Employee",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "column_break_ajww",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_zujw",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "criminal_conviction",
+   "fieldtype": "Select",
+   "label": "Criminal Conviction",
+   "options": "No\nYes"
+  },
+  {
+   "fieldname": "blood_type",
+   "fieldtype": "Select",
+   "label": "Blood Type",
+   "options": "A+\nB+\nAB+\nO+\nA-\nB-\nAB-\nO-"
+  },
+  {
+   "fieldname": "sub_field",
+   "fieldtype": "Select",
+   "label": "Sub Field",
+   "options": "Scientific Branch\nLiterary Branch"
+  },
+  {
+   "fieldname": "study_type",
+   "fieldtype": "Select",
+   "label": "Study Type",
+   "options": "Morning\nEvening"
+  },
+  {
+   "fieldname": "column_break_ramo",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "6th_grade_avarage_after_addition",
+   "fieldtype": "Float",
+   "label": "6th Grade Avarage After Addition"
+  },
+  {
+   "fieldname": "exam_number",
+   "fieldtype": "Data",
+   "label": "Exam Number"
+  },
+  {
+   "fieldname": "section_break_brpo",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "contact_and_adress_tab",
+   "fieldtype": "Tab Break",
+   "label": "Contact and Adress"
+  },
+  {
+   "fieldname": "disrict",
+   "fieldtype": "Link",
+   "label": "Disrict",
+   "options": "District"
+  },
+  {
+   "fieldname": "nationality_document_section",
+   "fieldtype": "Section Break",
+   "label": "Nationality Document"
+  },
+  {
+   "fieldname": "certificate_number",
+   "fieldtype": "Data",
+   "label": "Certificate Number"
+  },
+  {
+   "fieldname": "wallet_\u0622umber",
+   "fieldtype": "Data",
+   "label": "Wallet \u0622umber"
+  },
+  {
+   "fieldname": "column_break_olre",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "document_date",
+   "fieldtype": "Date",
+   "label": "Document Date"
+  },
+  {
+   "fieldname": "document_issuer",
+   "fieldtype": "Date",
+   "label": "Document Issuer"
+  },
+  {
+   "fieldname": "national_card_section",
+   "fieldtype": "Section Break",
+   "label": "National Card"
+  },
+  {
+   "fieldname": "residance_card_section",
+   "fieldtype": "Section Break",
+   "label": "Residance Card"
+  },
+  {
+   "fieldname": "residance__number",
+   "fieldtype": "Data",
+   "label": "Residance  Number"
+  },
+  {
+   "fieldname": "residance_form_number",
+   "fieldtype": "Data",
+   "label": "Residance Form Number"
+  },
+  {
+   "fieldname": "column_break_pxin",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "residance_card_issuer",
+   "fieldtype": "Data",
+   "label": "Residance Card Issuer"
+  },
+  {
+   "fieldname": "residance_formation_date",
+   "fieldtype": "Date",
+   "label": "Residance Formation Date"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "label": "Stage",
+   "options": "First\nSecond\nThird\nFourth\nFifth\nSixth"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2024-10-27 13:52:20.180112",
+ "modified_by": "Administrator",
+ "module": "Telafer University",
+ "name": "Student",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "show_title_field_in_link": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": [],
+ "title_field": "first_name"
+}
