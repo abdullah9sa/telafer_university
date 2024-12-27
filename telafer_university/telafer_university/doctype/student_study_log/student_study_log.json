@@ -1,0 +1,54 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "creation": "2024-12-27 17:43:40.920067",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "year",
+  "stage",
+  "finish_status",
+  "notes"
+ ],
+ "fields": [
+  {
+   "fieldname": "year",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Year",
+   "options": "Educational Year"
+  },
+  {
+   "fieldname": "stage",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Stage",
+   "options": "First\nSecond\nThird\nFourth\nFifth\nSixth"
+  },
+  {
+   "fieldname": "finish_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Finish Status",
+   "options": "Ongoing\nPassed\nFailed\nTransfer\nReferral\nDeregistration"
+  },
+  {
+   "fieldname": "notes",
+   "fieldtype": "Small Text",
+   "label": "Notes"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "istable": 1,
+ "links": [],
+ "modified": "2024-12-27 17:50:44.277851",
+ "modified_by": "Administrator",
+ "module": "Telafer University",
+ "name": "Student Study Log",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

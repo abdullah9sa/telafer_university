@@ -11,11 +11,13 @@
   "third_name",
   "fourth_name",
   "family_name",
+  "qr_code",
   "column_break_zjme",
   "mother_name",
   "gender",
   "date_of_birth",
   "any_parent_deceased",
+  "qr_image",
   "section_break_fgyb",
   "blood_type",
   "criminal_conviction",
@@ -63,6 +65,8 @@
   "stage",
   "section_break_qyol",
   "preferred_departments",
+  "statuses_section",
+  "student_study_log",
   "documents_tab",
   "national_card_section",
   "issue_date",
@@ -270,7 +274,7 @@
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nAccepted"
+   "options": "Pending\nApplied\nAccepted"
   },
   {
    "fieldname": "faculty",
@@ -525,12 +529,35 @@
    "fieldtype": "Select",
    "label": "Stage",
    "options": "First\nSecond\nThird\nFourth\nFifth\nSixth"
+  },
+  {
+   "fieldname": "qr_code",
+   "fieldtype": "Attach Image",
+   "label": "QR Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "qr_image",
+   "fieldtype": "Image",
+   "label": "QR Image",
+   "options": "qr_code"
+  },
+  {
+   "fieldname": "statuses_section",
+   "fieldtype": "Section Break",
+   "label": "Statuses"
+  },
+  {
+   "fieldname": "student_study_log",
+   "fieldtype": "Table",
+   "label": "Student Study Log",
+   "options": "Student Study Log"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-10-27 13:52:20.180112",
+ "modified": "2024-12-27 17:49:19.925160",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",
@@ -547,6 +574,30 @@
    "role": "System Manager",
    "share": 1,
    "submit": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Registration Employee",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Registration Manager",
+   "share": 1,
    "write": 1
   }
  ],

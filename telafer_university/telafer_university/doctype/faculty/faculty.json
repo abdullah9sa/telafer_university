@@ -6,19 +6,26 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "faculty"
+  "faculty",
+  "faculty_name_english"
  ],
  "fields": [
   {
    "fieldname": "faculty",
    "fieldtype": "Data",
-   "label": "Faculty",
+   "label": "Faculty Name Arabic",
+   "unique": 1
+  },
+  {
+   "fieldname": "faculty_name_english",
+   "fieldtype": "Data",
+   "label": "Faculty Name English",
    "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-22 09:23:46.664416",
+ "modified": "2024-12-27 18:25:34.596408",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Faculty",

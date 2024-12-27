@@ -6,19 +6,35 @@
  "doctype": "DocType",
  "engine": "InnoDB",
  "field_order": [
-  "department"
+  "faculty",
+  "department",
+  "department_name_english"
  ],
  "fields": [
   {
    "fieldname": "department",
    "fieldtype": "Data",
-   "label": "Department",
+   "label": "Department Name Arabic",
    "unique": 1
+  },
+  {
+   "fieldname": "department_name_english",
+   "fieldtype": "Data",
+   "label": "Department Name English",
+   "unique": 1
+  },
+  {
+   "fieldname": "faculty",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Faculty",
+   "options": "Faculty",
+   "reqd": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-09-22 09:24:21.922208",
+ "modified": "2024-12-27 18:27:01.347326",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Department",
