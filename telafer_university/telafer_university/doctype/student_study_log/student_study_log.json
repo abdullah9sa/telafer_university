@@ -27,11 +27,12 @@
    "options": "First\nSecond\nThird\nFourth\nFifth\nSixth"
   },
   {
+   "default": "Ongoing",
    "fieldname": "finish_status",
    "fieldtype": "Select",
    "in_list_view": 1,
    "label": "Finish Status",
-   "options": "Ongoing\nPassed\nFailed\nTransfer\nReferral\nDeregistration"
+   "options": "Ongoing\nPassed\nFailed\nTransfer\nReferral\nDeregistration\nGraduation"
   },
   {
    "fieldname": "notes",
@@ -42,7 +43,7 @@
  "index_web_pages_for_search": 1,
  "istable": 1,
  "links": [],
- "modified": "2024-12-27 17:50:44.277851",
+ "modified": "2025-01-02 18:30:04.563751",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student Study Log",

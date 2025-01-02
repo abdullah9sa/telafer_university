@@ -1,0 +1,50 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:nationality",
+ "creation": "2024-12-30 10:58:28.750294",
+ "doctype": "DocType",
+ "engine": "InnoDB",
+ "field_order": [
+  "nationality",
+  "nationality_arabic_name"
+ ],
+ "fields": [
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Data",
+   "label": "Nationality",
+   "unique": 1
+  },
+  {
+   "fieldname": "nationality_arabic_name",
+   "fieldtype": "Data",
+   "label": "Nationality Arabic Name"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "links": [],
+ "modified": "2024-12-30 10:58:58.296749",
+ "modified_by": "Administrator",
+ "module": "Telafer University",
+ "name": "Nationality",
+ "naming_rule": "By fieldname",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "states": []
+}

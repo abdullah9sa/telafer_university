@@ -12,17 +12,31 @@
   "fourth_name",
   "family_name",
   "qr_code",
-  "column_break_zjme",
+  "column_break_odkp",
+  "english_first_name",
+  "english_second_name",
+  "english_third_name",
+  "english_fourth_name",
+  "english_family_name",
+  "column_break_ofzi",
   "mother_name",
+  "mother_second_name",
+  "mother_third_name",
+  "qr_image",
+  "column_break_zjme",
   "gender",
   "date_of_birth",
+  "place_of_birth",
   "any_parent_deceased",
-  "qr_image",
+  "relationship_status",
   "section_break_fgyb",
+  "parent_name",
+  "parent_ocupation",
   "blood_type",
   "criminal_conviction",
   "employee",
   "column_break_xyal",
+  "nationality",
   "ethnicity",
   "religion",
   "section_break_nzqh",
@@ -50,11 +64,13 @@
   "study_type",
   "column_break_ramo",
   "exam_number",
+  "graduation_province",
   "graduation_date",
   "6th_grade_avarage",
   "6th_grade_avarage_after_addition",
   "section_break_brpo",
   "high_school_certificate",
+  "sixth_grade_marks",
   "study_info_tab",
   "status",
   "faculty",
@@ -68,15 +84,19 @@
   "statuses_section",
   "student_study_log",
   "documents_tab",
+  "main_section",
+  "id_type",
   "national_card_section",
   "issue_date",
   "issuer",
+  "page_number",
   "column_break_rfpe",
   "id_number",
   "register_number",
+  "family_number",
   "nationality_document_section",
   "certificate_number",
-  "wallet_\u0622umber",
+  "wallet_number",
   "column_break_olre",
   "document_date",
   "document_issuer",
@@ -88,11 +108,15 @@
   "residance_formation_date",
   "section_break_pvno",
   "id_file",
+  "id_back",
   "nationality_file",
+  "nationality_back",
   "student_image",
   "column_break_uxlt",
   "medical_test",
-  "residence_card"
+  "residence_card",
+  "residence_card_back",
+  "ration_card"
  ],
  "fields": [
   {
@@ -192,7 +216,7 @@
   {
    "fieldname": "id_file",
    "fieldtype": "Attach",
-   "label": "ID"
+   "label": "ID Face"
   },
   {
    "fieldname": "student_image",
@@ -211,7 +235,7 @@
   {
    "fieldname": "residence_card",
    "fieldtype": "Attach",
-   "label": "Residence Card"
+   "label": "Residence Card Face"
   },
   {
    "fieldname": "study_info_tab",
@@ -226,9 +250,9 @@
   {
    "default": "2024",
    "fieldname": "graduation_date",
-   "fieldtype": "Select",
+   "fieldtype": "Link",
    "label": "Graduation Year",
-   "options": "2040\n2039\n2038\n2037\n2036\n2035\n2034\n2033\n2032\n2031\n2030\n2029\n2028\n2027\n2026\n2025\n2024\n2023\n2022\n2021\n2020\n2019\n2018\n2017\n2016\n2015\n2014\n2013\n2012\n2011\n2010\n2009\n2008\n2007\n2006\n2005\n2004\n2003\n2002\n2001\n2000\n1999\n1998\n1997\n1996\n1995\n1994\n1993\n1992\n1991\n1990\n1989\n1988\n1987\n1986\n1985\n1984\n1983\n1982\n1981\n1980"
+   "options": "Educational Year"
   },
   {
    "fieldname": "6th_grade_avarage",
@@ -260,7 +284,6 @@
    "fieldtype": "Column Break"
   },
   {
-   "default": "+964-",
    "fieldname": "emergency_phone_number",
    "fieldtype": "Data",
    "label": "Emergency Phone Number"
@@ -301,7 +324,7 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother Full Name"
+   "label": "Mother First Name"
   },
   {
    "fieldname": "section_break_fgyb",
@@ -318,7 +341,7 @@
    "fieldname": "religion",
    "fieldtype": "Select",
    "label": "Religion",
-   "options": "Muslim\nJew\nChristian\nShabak\nYarsanism\nMandaeism\nYazidis\nOther"
+   "options": "Muslim\nChristian\nMandaeism\nYazidis\nOther"
   },
   {
    "fieldname": "admission_year",
@@ -333,7 +356,8 @@
   {
    "fieldname": "ethnicity",
    "fieldtype": "Select",
-   "label": "Ethnicity"
+   "label": "Ethnicity",
+   "options": "Arabs\nKurds\nTurkmen\nAssyrians\nArmenians\nYazidis\nShabaks\nMandaeans"
   },
   {
    "fieldname": "round",
@@ -370,6 +394,7 @@
    "label": "Id Number"
   },
   {
+   "depends_on": "eval:doc.id_type == \"Civil ID\"",
    "fieldname": "register_number",
    "fieldtype": "Data",
    "label": "Register Number"
@@ -381,7 +406,7 @@
   {
    "fieldname": "nationality_file",
    "fieldtype": "Attach",
-   "label": "Nationality File"
+   "label": "Nationality Face"
   },
   {
    "fieldname": "family_name",
@@ -462,6 +487,7 @@
    "options": "District"
   },
   {
+   "depends_on": "eval:doc.id_type == \"Civil ID\"",
    "fieldname": "nationality_document_section",
    "fieldtype": "Section Break",
    "label": "Nationality Document"
@@ -470,11 +496,6 @@
    "fieldname": "certificate_number",
    "fieldtype": "Data",
    "label": "Certificate Number"
-  },
-  {
-   "fieldname": "wallet_\u0622umber",
-   "fieldtype": "Data",
-   "label": "Wallet \u0622umber"
   },
   {
    "fieldname": "column_break_olre",
@@ -552,12 +573,144 @@
    "fieldtype": "Table",
    "label": "Student Study Log",
    "options": "Student Study Log"
+  },
+  {
+   "fieldname": "column_break_odkp",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "english_first_name",
+   "fieldtype": "Data",
+   "label": "English First Name"
+  },
+  {
+   "fieldname": "english_second_name",
+   "fieldtype": "Data",
+   "label": "English Second Name"
+  },
+  {
+   "fieldname": "english_third_name",
+   "fieldtype": "Data",
+   "label": "English Third Name"
+  },
+  {
+   "fieldname": "english_fourth_name",
+   "fieldtype": "Data",
+   "label": "English Fourth Name"
+  },
+  {
+   "fieldname": "english_family_name",
+   "fieldtype": "Data",
+   "label": "English Family Name"
+  },
+  {
+   "fieldname": "place_of_birth",
+   "fieldtype": "Date",
+   "label": "Place of Birth"
+  },
+  {
+   "fieldname": "column_break_ofzi",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mother_second_name",
+   "fieldtype": "Data",
+   "label": "Mother Second Name"
+  },
+  {
+   "fieldname": "mother_third_name",
+   "fieldtype": "Data",
+   "label": "Mother Third Name"
+  },
+  {
+   "fieldname": "relationship_status",
+   "fieldtype": "Select",
+   "label": "Relationship Status",
+   "options": "Single\nMarried\nDivorced\nArmal"
+  },
+  {
+   "fieldname": "parent_name",
+   "fieldtype": "Data",
+   "label": "Parent Name"
+  },
+  {
+   "fieldname": "parent_ocupation",
+   "fieldtype": "Data",
+   "label": "Parent Ocupation"
+  },
+  {
+   "fieldname": "nationality",
+   "fieldtype": "Link",
+   "label": "Nationality",
+   "options": "Nationality"
+  },
+  {
+   "fieldname": "graduation_province",
+   "fieldtype": "Link",
+   "label": "Graduation Province",
+   "options": "Province"
+  },
+  {
+   "fieldname": "sixth_grade_marks",
+   "fieldtype": "Table",
+   "label": "Sixth Grade Marks",
+   "options": "Sixth Grade Marks"
+  },
+  {
+   "fieldname": "ration_card",
+   "fieldtype": "Attach",
+   "label": "Ration Card"
+  },
+  {
+   "depends_on": "eval:doc.id_type == \"Civil ID\"",
+   "fieldname": "page_number",
+   "fieldtype": "Data",
+   "label": "Page Number"
+  },
+  {
+   "fieldname": "main_section",
+   "fieldtype": "Section Break",
+   "label": "Main"
+  },
+  {
+   "default": "National Card",
+   "fieldname": "id_type",
+   "fieldtype": "Select",
+   "label": "ID Type",
+   "options": "National Card\nCivil ID",
+   "reqd": 1
+  },
+  {
+   "fieldname": "id_back",
+   "fieldtype": "Attach",
+   "label": "ID Back"
+  },
+  {
+   "fieldname": "nationality_back",
+   "fieldtype": "Attach",
+   "label": "Nationality Back"
+  },
+  {
+   "fieldname": "residence_card_back",
+   "fieldtype": "Attach",
+   "label": "Residence Card Back"
+  },
+  {
+   "depends_on": "eval:doc.id_type == \"National Card\"",
+   "fieldname": "family_number",
+   "fieldtype": "Data",
+   "label": "Family Number"
+  },
+  {
+   "fieldname": "wallet_number",
+   "fieldtype": "Data",
+   "label": "Wallet Number"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-12-27 17:49:19.925160",
+ "modified": "2025-01-02 18:54:54.936417",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",

@@ -50,7 +50,14 @@ frappe.pages['students-passing'].on_page_load = function (wrapper) {
 			fieldtype: 'Link',
 			options: 'Educational Year',
 			reqd: 1
-		})
+		}),
+		result: page.add_field({
+			fieldname: 'result',
+			label: 'Result',
+			fieldtype: 'Select',
+			options: 'Passed\nOngoing\nFailed\nTransfer\nReferral\nDeregistration\nGraduation',
+			reqd: 1
+		}),
 	};
 
 
@@ -135,7 +142,7 @@ frappe.pages['students-passing'].on_page_load = function (wrapper) {
 
 			frappe.call({
 				method: 'telafer_university.telafer_university.utils.submit_passed_students',
-				args: { students: checkedStudents, year: filters.year.get_value() },
+				args: { students: checkedStudents, year: filters.year.get_value() ,result : filters.result.get_value()},
 				callback: function (response) {
 					frappe.msgprint(__('Successfully submitted selected students.'));
 				}
