@@ -215,12 +215,12 @@
   },
   {
    "fieldname": "id_file",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "ID Face"
   },
   {
    "fieldname": "student_image",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Student Image"
   },
   {
@@ -234,7 +234,7 @@
   },
   {
    "fieldname": "residence_card",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Residence Card Face"
   },
   {
@@ -405,7 +405,7 @@
   },
   {
    "fieldname": "nationality_file",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Nationality Face"
   },
   {
@@ -658,7 +658,7 @@
   },
   {
    "fieldname": "ration_card",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Ration Card"
   },
   {
@@ -682,17 +682,17 @@
   },
   {
    "fieldname": "id_back",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "ID Back"
   },
   {
    "fieldname": "nationality_back",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Nationality Back"
   },
   {
    "fieldname": "residence_card_back",
-   "fieldtype": "Attach",
+   "fieldtype": "Attach Image",
    "label": "Residence Card Back"
   },
   {
@@ -710,7 +710,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-02 18:54:54.936417",
+ "modified": "2025-01-03 11:10:26.892467",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",
