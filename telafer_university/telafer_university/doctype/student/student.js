@@ -1,13 +1,13 @@
 frappe.ui.form.on('Student', {
     refresh: function (frm) {
-        if (frm.doc.status == "Pending") {
+        if (frm.doc.status == "Pending"&& frappe.user.has_role('Student')) {
             frm.add_custom_button(__('Apply'), function () {
                 frappe.msgprint(__("Information Applied Successfully"));
                 frm.set_value('status', 'Applied');
                 frm.save();
             }).addClass('bg-warning');
         }
-        if (frm.doc.status == "Applied") {
+        if (frm.doc.status == "Applied"&& (frappe.user.has_role('Registration Employee') || frappe.user.has_role('Registration Manager'))) {
             frm.add_custom_button(__('Reject'), function () {
                 frappe.msgprint(__("Information Rejected"));
                 frm.set_value('status', 'Pending');
