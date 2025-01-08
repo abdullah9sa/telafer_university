@@ -14,8 +14,7 @@
    "fieldname": "province",
    "fieldtype": "Link",
    "label": "Province",
-   "options": "Province",
-   "unique": 1
+   "options": "Province"
   },
   {
    "fieldname": "district",
@@ -26,7 +25,7 @@
  ],
  "index_web_pages_for_search": 1,
  "links": [],
- "modified": "2024-10-27 09:41:08.898024",
+ "modified": "2025-01-08 20:53:14.973769",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "District",
