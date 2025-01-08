@@ -1,9 +1,16 @@
-# Copyright (c) 2024, telafer and contributors
-# For license information, please see license.txt
 
-# import frappe
+import frappe
 from frappe.model.document import Document
+from frappe import _
 
 
 class Student(Document):
-	pass
+    def before_save(self):
+        if frappe.db.exists("Student", {"owner": self.owner}):
+            # frappe.throw(_("A Student record already exists for this user."))
+            frappe.throw(_("لا يمكن تسجيل طالب جديد بنفس المستخدم"))
+            
+            
+            
+            
+            
