@@ -31,6 +31,15 @@ frappe.ui.form.on('Student', {
             frm.disable_save();
         }
 
+        if (frm.doc.status === 'Applied' && frappe.user.has_role('Student')) {
+            Object.keys(frm.fields_dict).forEach(field => {
+            frm.set_df_property(field, 'read_only', 1);
+            });
+            // Disable save
+            frm.disable_save();
+        }
+
+
         if (!frm.is_new()) {
             const currentUrl = `${window.location.origin}/app/student/${frm.doc.name}`;
             const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(currentUrl)}&size=150x150`;
