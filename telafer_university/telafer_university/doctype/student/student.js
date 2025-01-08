@@ -9,9 +9,10 @@ frappe.ui.form.on('Student', {
         }
         if (frm.doc.status == "Applied"&& (frappe.user.has_role('Registration Employee') || frappe.user.has_role('Registration Manager'))) {
             frm.add_custom_button(__('Reject'), function () {
-                frappe.msgprint(__("Information Rejected"));
                 frm.set_value('status', 'Pending');
                 frm.save();
+                frappe.msgprint(__("Information Rejected"));
+
             }).addClass('bg-error');
             frm.add_custom_button(__('Accept'), function () {
                 frappe.msgprint(__("Information Accepted Successfully"));
@@ -48,3 +49,4 @@ frappe.ui.form.on('Student', {
         }
     }
 });
+
