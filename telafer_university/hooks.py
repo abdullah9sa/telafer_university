@@ -34,7 +34,7 @@ fixtures = [
         ]
     },
     {
-        "dt": "HTML Block",
+        "dt": "Custom HTML Block",
         "filters": [
             [
                 "name",

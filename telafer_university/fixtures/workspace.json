@@ -1,0 +1,175 @@
+[
+ {
+  "charts": [],
+  "content": "[{\"id\":\"AFSvskY03Q\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Student Information System</span>\",\"col\":12}},{\"id\":\"5xD2eeofUk\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Student\",\"col\":3}},{\"id\":\"PsPgr1qehu\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Faculty\",\"col\":3}},{\"id\":\"1br90Jq8xt\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Department\",\"col\":3}},{\"id\":\"VeB15mdLqN\",\"type\":\"spacer\",\"data\":{\"col\":12}},{\"id\":\"mN55umxQuK\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"Province\",\"col\":3}},{\"id\":\"-fJd2IkRBn\",\"type\":\"shortcut\",\"data\":{\"shortcut_name\":\"District\",\"col\":3}}]",
+  "custom_blocks": [],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "table_2",
+  "indicator_color": "orange",
+  "is_hidden": 0,
+  "label": "Student Information System",
+  "links": [],
+  "modified": "2025-01-16 09:37:02.500632",
+  "module": null,
+  "name": "Student Information System",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Student Information System",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "System Manager"
+   },
+   {
+    "parent": "Student Information System",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Registration Manager"
+   },
+   {
+    "parent": "Student Information System",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Registration Employee"
+   }
+  ],
+  "sequence_id": 28.0,
+  "shortcuts": [
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Student",
+    "link_to": "Student",
+    "parent": "Student Information System",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Faculty",
+    "link_to": "Faculty",
+    "parent": "Student Information System",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Department",
+    "link_to": "Department",
+    "parent": "Student Information System",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "Province",
+    "link_to": "Province",
+    "parent": "Student Information System",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   },
+   {
+    "color": "Grey",
+    "doc_view": "List",
+    "format": null,
+    "icon": null,
+    "kanban_board": null,
+    "label": "District",
+    "link_to": "District",
+    "parent": "Student Information System",
+    "parentfield": "shortcuts",
+    "parenttype": "Workspace",
+    "restrict_to_domain": null,
+    "stats_filter": "[]",
+    "type": "DocType",
+    "url": null
+   }
+  ],
+  "title": "Student Information System"
+ },
+ {
+  "charts": [],
+  "content": "[{\"id\":\"ZCf_frW9p_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Student Dashboard</span>\",\"col\":12}},{\"id\":\"NJgGCtNDpH\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Student Dashboard\",\"col\":12}}]",
+  "custom_blocks": [
+   {
+    "custom_block_name": "Student Dashboard",
+    "label": "Student Dashboard",
+    "parent": "Student Dashboard",
+    "parentfield": "custom_blocks",
+    "parenttype": "Workspace"
+   }
+  ],
+  "docstatus": 0,
+  "doctype": "Workspace",
+  "for_user": "",
+  "hide_custom": 0,
+  "icon": "milestone",
+  "indicator_color": "green",
+  "is_hidden": 0,
+  "label": "Student Dashboard",
+  "links": [],
+  "modified": "2025-01-16 09:37:09.445838",
+  "module": "Telafer University",
+  "name": "Student Dashboard",
+  "number_cards": [],
+  "parent_page": "",
+  "public": 1,
+  "quick_lists": [],
+  "restrict_to_domain": null,
+  "roles": [
+   {
+    "parent": "Student Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "Student"
+   },
+   {
+    "parent": "Student Dashboard",
+    "parentfield": "roles",
+    "parenttype": "Workspace",
+    "role": "System Manager"
+   }
+  ],
+  "sequence_id": 29.0,
+  "shortcuts": [],
+  "title": "Student Dashboard"
+ }
+]
