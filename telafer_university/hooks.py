@@ -5,6 +5,49 @@ app_description = "UMS"
 app_email = "telafer@telafer.com"
 app_license = "mit"
 
+fixtures = [
+    {
+        "dt": "Role",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Student",
+                    "Registration Manager",
+                    "Registration Employee",
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "Workspace",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Student Information System",
+                    "Student Dashboard",
+                ]
+            ]
+        ]
+    },
+    {
+        "dt": "HTML Block",
+        "filters": [
+            [
+                "name",
+                "in",
+                [
+                    "Student Dashboard",
+                ]
+            ]
+        ]
+    },
+]
+
+
 # Apps
 # ------------------
 

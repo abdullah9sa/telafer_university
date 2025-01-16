@@ -1,5 +1,7 @@
 frappe.ui.form.on('Student', {
     refresh: function (frm) {
+        if (!frm.is_new()) {
+
         if (frm.doc.status == "Pending"&& frappe.user.has_role('Student')) {
             frm.add_custom_button(__('Apply'), function () {
                 frappe.msgprint(__("Information Applied Successfully"));
@@ -41,12 +43,30 @@ frappe.ui.form.on('Student', {
         }
 
 
-        if (!frm.is_new()) {
             const currentUrl = `${window.location.origin}/app/student/${frm.doc.name}`;
             const qrCodeUrl = `https://api.qrserver.com/v1/create-qr-code/?data=${encodeURIComponent(currentUrl)}&size=150x150`;
             frm.set_value('qr_code', qrCodeUrl);
             frm.refresh_field("qr_image");
         }
+
+                // set debit_to to : default_receivable_account from doc.company's field
+		frm.set_query("disrict", function () {
+			return {
+				filters: {
+					province : frm.doc.province,
+				},
+			};
+		});
+
+        // set debit_to to : default_receivable_account from doc.company's field
+        frm.set_query("department", function () {
+            return {
+                filters: {
+                    faculty : frm.doc.faculty,
+                },
+            };
+        });
+        
     }
 });
 

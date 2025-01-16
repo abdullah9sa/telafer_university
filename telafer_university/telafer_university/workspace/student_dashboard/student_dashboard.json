@@ -1,0 +1,41 @@
+{
+ "charts": [],
+ "content": "[{\"id\":\"ZCf_frW9p_\",\"type\":\"header\",\"data\":{\"text\":\"<span class=\\\"h4\\\">Student Dashboard</span>\",\"col\":12}},{\"id\":\"NJgGCtNDpH\",\"type\":\"custom_block\",\"data\":{\"custom_block_name\":\"Student Dashboard\",\"col\":12}}]",
+ "creation": "2025-01-16 08:34:57.366143",
+ "custom_blocks": [
+  {
+   "custom_block_name": "Student Dashboard",
+   "label": "Student Dashboard"
+  }
+ ],
+ "docstatus": 0,
+ "doctype": "Workspace",
+ "for_user": "",
+ "hide_custom": 0,
+ "icon": "milestone",
+ "idx": 0,
+ "indicator_color": "green",
+ "is_hidden": 0,
+ "label": "Student Dashboard",
+ "links": [],
+ "modified": "2025-01-16 09:37:09.445838",
+ "modified_by": "Administrator",
+ "module": "Telafer University",
+ "name": "Student Dashboard",
+ "number_cards": [],
+ "owner": "Administrator",
+ "parent_page": "",
+ "public": 1,
+ "quick_lists": [],
+ "roles": [
+  {
+   "role": "Student"
+  },
+  {
+   "role": "System Manager"
+  }
+ ],
+ "sequence_id": 29.0,
+ "shortcuts": [],
+ "title": "Student Dashboard"
+}

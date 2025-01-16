@@ -22,13 +22,13 @@
   "mother_name",
   "mother_second_name",
   "mother_third_name",
-  "qr_image",
-  "column_break_zjme",
   "gender",
   "date_of_birth",
   "place_of_birth",
+  "column_break_zjme",
   "any_parent_deceased",
   "relationship_status",
+  "qr_image",
   "section_break_fgyb",
   "parent_name",
   "parent_ocupation",
@@ -62,8 +62,8 @@
   "round",
   "sub_field",
   "study_type",
-  "column_break_ramo",
   "exam_number",
+  "column_break_ramo",
   "graduation_province",
   "graduation_date",
   "6th_grade_avarage",
@@ -110,13 +110,12 @@
   "id_file",
   "id_back",
   "nationality_file",
-  "nationality_back",
-  "student_image",
+  "ration_card",
   "column_break_uxlt",
-  "medical_test",
   "residence_card",
   "residence_card_back",
-  "ration_card"
+  "student_image",
+  "medical_test"
  ],
  "fields": [
   {
@@ -137,22 +136,26 @@
   {
    "fieldname": "first_name",
    "fieldtype": "Data",
-   "label": "First Name"
+   "label": "First Name",
+   "reqd": 1
   },
   {
    "fieldname": "second_name",
    "fieldtype": "Data",
-   "label": "Second Name"
+   "label": "Second Name",
+   "reqd": 1
   },
   {
    "fieldname": "third_name",
    "fieldtype": "Data",
-   "label": "Third Name"
+   "label": "Third Name",
+   "reqd": 1
   },
   {
    "fieldname": "fourth_name",
    "fieldtype": "Data",
-   "label": "Fourth Name"
+   "label": "Fourth Name",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_zjme",
@@ -166,20 +169,23 @@
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "Male\nFemale"
+   "options": "Male\nFemale",
+   "reqd": 1
   },
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "label": "Date of Birth"
+   "label": "Date of Birth",
+   "reqd": 1
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email"
+   "label": "Email",
+   "reqd": 1
   },
   {
-   "description": "Example : 0770 1111 111",
+   "description": "Example : 07701111111",
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "in_list_view": 1,
@@ -195,18 +201,21 @@
    "fieldname": "country_of_origin",
    "fieldtype": "Link",
    "label": "Country of Origin",
-   "options": "Country"
+   "options": "Country",
+   "reqd": 1
   },
   {
    "fieldname": "province",
    "fieldtype": "Link",
    "label": "Province",
-   "options": "Province"
+   "options": "Province",
+   "reqd": 1
   },
   {
    "fieldname": "address",
    "fieldtype": "Data",
-   "label": "Address"
+   "label": "Address",
+   "reqd": 1
   },
   {
    "fieldname": "documents_tab",
@@ -248,21 +257,23 @@
    "label": "High School Info"
   },
   {
-   "default": "2024",
    "fieldname": "graduation_date",
    "fieldtype": "Link",
    "label": "Graduation Year",
-   "options": "Educational Year"
+   "options": "Educational Year",
+   "reqd": 1
   },
   {
    "fieldname": "6th_grade_avarage",
    "fieldtype": "Float",
-   "label": "6th Grade Avarage Before Addition"
+   "label": "6th Grade Avarage Before Addition",
+   "reqd": 1
   },
   {
    "fieldname": "high_school_certificate",
    "fieldtype": "Attach",
-   "label": "High School Certificate"
+   "label": "High School Certificate",
+   "reqd": 1
   },
   {
    "fieldname": "emergency_contact_section",
@@ -272,12 +283,15 @@
   {
    "fieldname": "emergency_contact_name",
    "fieldtype": "Data",
-   "label": "Emergency Contact Name"
+   "label": "Emergency Contact Name",
+   "reqd": 1
   },
   {
    "fieldname": "relation",
    "fieldtype": "Select",
-   "label": "Relation"
+   "label": "Relation",
+   "options": "Father\nMother\nBrother\nSister\nUncle\nHusband/Wife",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_kkkc",
@@ -286,24 +300,28 @@
   {
    "fieldname": "emergency_phone_number",
    "fieldtype": "Data",
-   "label": "Emergency Phone Number"
+   "label": "Emergency Phone Number",
+   "reqd": 1
   },
   {
    "fieldname": "emergency_email",
    "fieldtype": "Data",
-   "label": "Emergency Email"
+   "label": "Emergency Email",
+   "reqd": 1
   },
   {
    "fieldname": "status",
    "fieldtype": "Select",
    "label": "Status",
-   "options": "Pending\nApplied\nAccepted"
+   "options": "Pending\nApplied\nAccepted",
+   "read_only": 1
   },
   {
    "fieldname": "faculty",
    "fieldtype": "Link",
    "label": "Faculty",
-   "options": "Faculty"
+   "options": "Faculty",
+   "reqd": 1
   },
   {
    "fieldname": "department",
@@ -324,7 +342,8 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother First Name"
+   "label": "Mother First Name",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_fgyb",
@@ -335,19 +354,22 @@
    "fieldname": "admission_channel",
    "fieldtype": "Select",
    "label": "Admission Channel",
-   "options": "General channel\nMartyrs\nTeachers\nAthletes\nCertificate holders\nDistinguished\nPolitical prisoners\nExpatriates\nStudents of Kurdistan Region"
+   "options": "General channel\nMartyrs\nTeachers\nAthletes\nCertificate holders\nDistinguished\nPolitical prisoners\nExpatriates\nStudents of Kurdistan Region",
+   "reqd": 1
   },
   {
    "fieldname": "religion",
    "fieldtype": "Select",
    "label": "Religion",
-   "options": "Muslim\nChristian\nMandaeism\nYazidis\nOther"
+   "options": "Muslim\nChristian\nMandaeism\nYazidis\nOther",
+   "reqd": 1
   },
   {
    "fieldname": "admission_year",
    "fieldtype": "Link",
    "label": "Admission Year",
-   "options": "Educational Year"
+   "options": "Educational Year",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_xyal",
@@ -357,13 +379,15 @@
    "fieldname": "ethnicity",
    "fieldtype": "Select",
    "label": "Ethnicity",
-   "options": "Arabs\nKurds\nTurkmen\nAssyrians\nArmenians\nYazidis\nShabaks\nMandaeans"
+   "options": "Arabs\nKurds\nTurkmen\nAssyrians\nArmenians\nYazidis\nShabaks\nMandaeans",
+   "reqd": 1
   },
   {
    "fieldname": "round",
    "fieldtype": "Select",
    "label": "Round",
-   "options": "First\nSecond\nThird"
+   "options": "First\nSecond\nThird",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_srar",
@@ -372,7 +396,8 @@
   {
    "fieldname": "school_name",
    "fieldtype": "Data",
-   "label": "School Name"
+   "label": "School Name",
+   "reqd": 1
   },
   {
    "fieldname": "issue_date",
@@ -397,7 +422,8 @@
    "depends_on": "eval:doc.id_type == \"Civil ID\"",
    "fieldname": "register_number",
    "fieldtype": "Data",
-   "label": "Register Number"
+   "label": "Register Number",
+   "mandatory_depends_on": "eval:doc.id_type == \"Civil ID\""
   },
   {
    "fieldname": "section_break_pvno",
@@ -406,24 +432,27 @@
   {
    "fieldname": "nationality_file",
    "fieldtype": "Attach Image",
-   "label": "Nationality Face"
+   "label": "Nationality"
   },
   {
    "fieldname": "family_name",
    "fieldtype": "Data",
-   "label": "Family Name"
+   "label": "Family Name",
+   "reqd": 1
   },
   {
    "fieldname": "any_parent_deceased",
    "fieldtype": "Select",
    "label": "Any Parent Deceased",
-   "options": "\nFather\nMother"
+   "options": "None\nFather\nMother",
+   "reqd": 1
   },
   {
    "fieldname": "employee",
    "fieldtype": "Select",
    "label": "Employee",
-   "options": "No\nYes"
+   "options": "No\nYes",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ajww",
@@ -437,25 +466,29 @@
    "fieldname": "criminal_conviction",
    "fieldtype": "Select",
    "label": "Criminal Conviction",
-   "options": "No\nYes"
+   "options": "No\nYes",
+   "reqd": 1
   },
   {
    "fieldname": "blood_type",
    "fieldtype": "Select",
    "label": "Blood Type",
-   "options": "A+\nB+\nAB+\nO+\nA-\nB-\nAB-\nO-"
+   "options": "A+\nB+\nAB+\nO+\nA-\nB-\nAB-\nO-",
+   "reqd": 1
   },
   {
    "fieldname": "sub_field",
    "fieldtype": "Select",
    "label": "Sub Field",
-   "options": "Scientific Branch\nLiterary Branch"
+   "options": "Scientific Branch\nLiterary Branch",
+   "reqd": 1
   },
   {
    "fieldname": "study_type",
    "fieldtype": "Select",
    "label": "Study Type",
-   "options": "Morning\nEvening"
+   "options": "Morning\nEvening",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ramo",
@@ -464,12 +497,14 @@
   {
    "fieldname": "6th_grade_avarage_after_addition",
    "fieldtype": "Float",
-   "label": "6th Grade Avarage After Addition"
+   "label": "6th Grade Avarage After Addition",
+   "reqd": 1
   },
   {
    "fieldname": "exam_number",
    "fieldtype": "Data",
-   "label": "Exam Number"
+   "label": "Exam Number",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_brpo",
@@ -484,7 +519,8 @@
    "fieldname": "disrict",
    "fieldtype": "Link",
    "label": "Disrict",
-   "options": "District"
+   "options": "District",
+   "reqd": 1
   },
   {
    "depends_on": "eval:doc.id_type == \"Civil ID\"",
@@ -524,12 +560,14 @@
   {
    "fieldname": "residance__number",
    "fieldtype": "Data",
-   "label": "Residance  Number"
+   "label": "Residance  Number",
+   "reqd": 1
   },
   {
    "fieldname": "residance_form_number",
    "fieldtype": "Data",
-   "label": "Residance Form Number"
+   "label": "Residance Form Number",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_pxin",
@@ -538,22 +576,26 @@
   {
    "fieldname": "residance_card_issuer",
    "fieldtype": "Data",
-   "label": "Residance Card Issuer"
+   "label": "Residance Card Issuer",
+   "reqd": 1
   },
   {
    "fieldname": "residance_formation_date",
    "fieldtype": "Date",
-   "label": "Residance Formation Date"
+   "label": "Residance Formation Date",
+   "reqd": 1
   },
   {
    "fieldname": "stage",
    "fieldtype": "Select",
+   "hidden": 1,
    "label": "Stage",
    "options": "First\nSecond\nThird\nFourth\nFifth\nSixth"
   },
   {
    "fieldname": "qr_code",
    "fieldtype": "Attach Image",
+   "hidden": 1,
    "label": "QR Code",
    "read_only": 1
   },
@@ -581,32 +623,38 @@
   {
    "fieldname": "english_first_name",
    "fieldtype": "Data",
-   "label": "English First Name"
+   "label": "English First Name",
+   "reqd": 1
   },
   {
    "fieldname": "english_second_name",
    "fieldtype": "Data",
-   "label": "English Second Name"
+   "label": "English Second Name",
+   "reqd": 1
   },
   {
    "fieldname": "english_third_name",
    "fieldtype": "Data",
-   "label": "English Third Name"
+   "label": "English Third Name",
+   "reqd": 1
   },
   {
    "fieldname": "english_fourth_name",
    "fieldtype": "Data",
-   "label": "English Fourth Name"
+   "label": "English Fourth Name",
+   "reqd": 1
   },
   {
    "fieldname": "english_family_name",
    "fieldtype": "Data",
-   "label": "English Family Name"
+   "label": "English Family Name",
+   "reqd": 1
   },
   {
    "fieldname": "place_of_birth",
    "fieldtype": "Date",
-   "label": "Place of Birth"
+   "label": "Place of Birth",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_ofzi",
@@ -615,46 +663,54 @@
   {
    "fieldname": "mother_second_name",
    "fieldtype": "Data",
-   "label": "Mother Second Name"
+   "label": "Mother Second Name",
+   "reqd": 1
   },
   {
    "fieldname": "mother_third_name",
    "fieldtype": "Data",
-   "label": "Mother Third Name"
+   "label": "Mother Third Name",
+   "reqd": 1
   },
   {
    "fieldname": "relationship_status",
    "fieldtype": "Select",
    "label": "Relationship Status",
-   "options": "Single\nMarried\nDivorced\nArmal"
+   "options": "Single\nMarried\nDivorced\nArmal",
+   "reqd": 1
   },
   {
    "fieldname": "parent_name",
    "fieldtype": "Data",
-   "label": "Parent Name"
+   "label": "Parent Name",
+   "reqd": 1
   },
   {
    "fieldname": "parent_ocupation",
    "fieldtype": "Data",
-   "label": "Parent Ocupation"
+   "label": "Parent Ocupation",
+   "reqd": 1
   },
   {
    "fieldname": "nationality",
    "fieldtype": "Link",
    "label": "Nationality",
-   "options": "Nationality"
+   "options": "Nationality",
+   "reqd": 1
   },
   {
    "fieldname": "graduation_province",
    "fieldtype": "Link",
    "label": "Graduation Province",
-   "options": "Province"
+   "options": "Province",
+   "reqd": 1
   },
   {
    "fieldname": "sixth_grade_marks",
    "fieldtype": "Table",
    "label": "Sixth Grade Marks",
-   "options": "Sixth Grade Marks"
+   "options": "Sixth Grade Marks",
+   "reqd": 1
   },
   {
    "fieldname": "ration_card",
@@ -665,7 +721,8 @@
    "depends_on": "eval:doc.id_type == \"Civil ID\"",
    "fieldname": "page_number",
    "fieldtype": "Data",
-   "label": "Page Number"
+   "label": "Page Number",
+   "mandatory_depends_on": "eval:doc.id_type == \"Civil ID\""
   },
   {
    "fieldname": "main_section",
@@ -686,11 +743,6 @@
    "label": "ID Back"
   },
   {
-   "fieldname": "nationality_back",
-   "fieldtype": "Attach Image",
-   "label": "Nationality Back"
-  },
-  {
    "fieldname": "residence_card_back",
    "fieldtype": "Attach Image",
    "label": "Residence Card Back"
@@ -699,7 +751,8 @@
    "depends_on": "eval:doc.id_type == \"National Card\"",
    "fieldname": "family_number",
    "fieldtype": "Data",
-   "label": "Family Number"
+   "label": "Family Number",
+   "mandatory_depends_on": "eval:doc.id_type == \"National Card\""
   },
   {
    "fieldname": "wallet_number",
@@ -710,7 +763,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-08 10:04:02.062219",
+ "modified": "2025-01-16 10:00:22.141284",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",
@@ -755,7 +808,6 @@
   },
   {
    "create": 1,
-   "delete": 1,
    "email": 1,
    "export": 1,
    "if_owner": 1,
