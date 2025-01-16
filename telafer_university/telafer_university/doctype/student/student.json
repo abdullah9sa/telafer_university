@@ -36,6 +36,7 @@
   "criminal_conviction",
   "employee",
   "column_break_xyal",
+  "country_of_origin",
   "nationality",
   "ethnicity",
   "religion",
@@ -43,7 +44,6 @@
   "amended_from",
   "contact_and_adress_tab",
   "section_break_bhuq",
-  "country_of_origin",
   "province",
   "disrict",
   "address",
@@ -652,8 +652,9 @@
   },
   {
    "fieldname": "place_of_birth",
-   "fieldtype": "Date",
+   "fieldtype": "Link",
    "label": "Place of Birth",
+   "options": "Province",
    "reqd": 1
   },
   {
@@ -695,7 +696,7 @@
    "fieldname": "nationality",
    "fieldtype": "Link",
    "label": "Nationality",
-   "options": "Nationality",
+   "options": "Country",
    "reqd": 1
   },
   {
@@ -763,7 +764,7 @@
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-16 10:00:22.141284",
+ "modified": "2025-01-16 11:15:19.722573",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",
