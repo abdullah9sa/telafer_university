@@ -1,5 +1,15 @@
 frappe.ui.form.on('Student', {
     refresh: function (frm) {
+        if (frm.doc.status == "Accepted") {
+            frm.add_custom_button(__('طباعة الملف'), function () {
+                // Construct the URL for the print view
+                const url = `/printview?doctype=Student&name=${frm.doc.name}&trigger_print=1&format=Student%20Print%20Format&no_letterhead=1&letterhead=No%20Letterhead&settings=%7B%7D&_lang=ar`;
+                
+                // Open the URL in a new tab
+                window.open(url, '_blank');
+            }).addClass('bg-info');
+        }
+        
         if (!frm.is_new()) {
 
         if (frm.doc.status == "Pending"&& frappe.user.has_role('Student')) {
