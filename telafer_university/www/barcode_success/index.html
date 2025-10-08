@@ -1,0 +1,10 @@
+{% extends "templates/web.html" %}
+{% block page_content %}
+  <div class="text-center" style="padding:40px">
+    <h2>تم التقديم بنجاح</h2>
+    <img src="{{ barcode_url }}" alt="Barcode" style="max-width:320px;height:auto">
+    <br>
+    <p>يرجى الاحتفاض بالكود</p>
+    <a href="{{ barcode_url }}" download="student_qr_code.png" class="btn btn-primary mt-3"> تنزيل الكود </a>
+  </div>
+{% endblock %}

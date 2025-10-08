@@ -11,7 +11,7 @@
   "third_name",
   "fourth_name",
   "family_name",
-  "qr_code",
+  "place_of_birth",
   "column_break_odkp",
   "english_first_name",
   "english_second_name",
@@ -24,8 +24,8 @@
   "mother_third_name",
   "gender",
   "date_of_birth",
-  "place_of_birth",
-  "column_break_zjme",
+  "section_break_ahzf",
+  "qr_code",
   "any_parent_deceased",
   "relationship_status",
   "qr_image",
@@ -70,19 +70,35 @@
   "6th_grade_avarage_after_addition",
   "section_break_brpo",
   "high_school_certificate",
-  "sixth_grade_marks",
+  "section_break_auvk",
+  "mathmatics",
+  "english",
+  "arabic",
+  "islamics",
+  "column_break_skqy",
+  "chemestry",
+  "physics",
+  "biology",
+  "history",
+  "geography",
+  "economy",
+  "column_break_laix",
+  "french",
+  "kurdish_language",
+  "turkman_language",
   "study_info_tab",
   "status",
   "faculty",
-  "admission_year",
   "column_break_zujw",
-  "department",
   "admission_channel",
-  "stage",
+  "accepted_department",
   "section_break_qyol",
-  "preferred_departments",
-  "statuses_section",
-  "student_study_log",
+  "college_1",
+  "department_1",
+  "department_2",
+  "department_3",
+  "department_4",
+  "department_5",
   "documents_tab",
   "main_section",
   "id_type",
@@ -158,10 +174,6 @@
    "reqd": 1
   },
   {
-   "fieldname": "column_break_zjme",
-   "fieldtype": "Column Break"
-  },
-  {
    "fieldname": "section_break_nzqh",
    "fieldtype": "Section Break"
   },
@@ -201,14 +213,13 @@
    "fieldname": "country_of_origin",
    "fieldtype": "Link",
    "label": "Country of Origin",
-   "options": "Country",
-   "reqd": 1
+   "options": "Country"
   },
   {
    "fieldname": "province",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Province",
-   "options": "Province",
+   "options": "\u0628\u063a\u062f\u0627\u062f\n\u0646\u064a\u0646\u0648\u0649\n\u0627\u0644\u0628\u0635\u0631\u0629\n\u0623\u0631\u0628\u064a\u0644\n\u0627\u0644\u0623\u0646\u0628\u0627\u0631\n\u0643\u0631\u0643\u0648\u0643\n\u0635\u0644\u0627\u062d \u0627\u0644\u062f\u064a\u0646\n\u062f\u064a\u0627\u0644\u0649\n\u0630\u064a \u0642\u0627\u0631\n\u0627\u0644\u0646\u062c\u0641\n\u0643\u0631\u0628\u0644\u0627\u0621\n\u0628\u0627\u0628\u0644\n\u0648\u0627\u0633\u0637\n\u0645\u064a\u0633\u0627\u0646\n\u0627\u0644\u062f\u064a\u0648\u0627\u0646\u064a\u0629\n\u0627\u0644\u0645\u062b\u0646\u0649\n\u062f\u0647\u0648\u0643\n\u0627\u0644\u0633\u0644\u064a\u0645\u0627\u0646\u064a\u0629",
    "reqd": 1
   },
   {
@@ -258,9 +269,9 @@
   },
   {
    "fieldname": "graduation_date",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Graduation Year",
-   "options": "Educational Year",
+   "options": "2015/2016\n2016/2017\n2017/2018\n2018/2019\n2019/2020\n2020/2021\n2021/2022\n2022/2023\n2023/2024\n2024/2025\n2025/2026",
    "reqd": 1
   },
   {
@@ -320,24 +331,11 @@
    "fieldname": "faculty",
    "fieldtype": "Link",
    "label": "Faculty",
-   "options": "Faculty",
-   "reqd": 1
-  },
-  {
-   "fieldname": "department",
-   "fieldtype": "Link",
-   "label": "Department",
-   "options": "Department"
+   "options": "Faculty"
   },
   {
    "fieldname": "section_break_qyol",
    "fieldtype": "Section Break"
-  },
-  {
-   "fieldname": "preferred_departments",
-   "fieldtype": "Table",
-   "label": "Preferred Departments",
-   "options": "Preferred Departments"
   },
   {
    "fieldname": "mother_name",
@@ -362,13 +360,6 @@
    "fieldtype": "Select",
    "label": "Religion",
    "options": "Muslim\nChristian\nMandaeism\nYazidis\nOther",
-   "reqd": 1
-  },
-  {
-   "fieldname": "admission_year",
-   "fieldtype": "Link",
-   "label": "Admission Year",
-   "options": "Educational Year",
    "reqd": 1
   },
   {
@@ -473,8 +464,7 @@
    "fieldname": "blood_type",
    "fieldtype": "Select",
    "label": "Blood Type",
-   "options": "A+\nB+\nAB+\nO+\nA-\nB-\nAB-\nO-",
-   "reqd": 1
+   "options": "A+\nB+\nAB+\nO+\nA-\nB-\nAB-\nO-"
   },
   {
    "fieldname": "sub_field",
@@ -517,9 +507,8 @@
   },
   {
    "fieldname": "disrict",
-   "fieldtype": "Link",
+   "fieldtype": "Data",
    "label": "Disrict",
-   "options": "District",
    "reqd": 1
   },
   {
@@ -586,18 +575,9 @@
    "reqd": 1
   },
   {
-   "fieldname": "stage",
-   "fieldtype": "Select",
-   "hidden": 1,
-   "label": "Stage",
-   "options": "First\nSecond\nThird\nFourth\nFifth\nSixth"
-  },
-  {
    "fieldname": "qr_code",
    "fieldtype": "Attach Image",
-   "hidden": 1,
-   "label": "QR Code",
-   "read_only": 1
+   "label": "QR Code"
   },
   {
    "fieldname": "qr_image",
@@ -606,53 +586,37 @@
    "options": "qr_code"
   },
   {
-   "fieldname": "statuses_section",
-   "fieldtype": "Section Break",
-   "label": "Statuses"
-  },
-  {
-   "fieldname": "student_study_log",
-   "fieldtype": "Table",
-   "label": "Student Study Log",
-   "options": "Student Study Log"
-  },
-  {
    "fieldname": "column_break_odkp",
    "fieldtype": "Column Break"
   },
   {
    "fieldname": "english_first_name",
    "fieldtype": "Data",
-   "label": "English First Name",
-   "reqd": 1
+   "label": "English First Name"
   },
   {
    "fieldname": "english_second_name",
    "fieldtype": "Data",
-   "label": "English Second Name",
-   "reqd": 1
+   "label": "English Second Name"
   },
   {
    "fieldname": "english_third_name",
    "fieldtype": "Data",
-   "label": "English Third Name",
-   "reqd": 1
+   "label": "English Third Name"
   },
   {
    "fieldname": "english_fourth_name",
    "fieldtype": "Data",
-   "label": "English Fourth Name",
-   "reqd": 1
+   "label": "English Fourth Name"
   },
   {
    "fieldname": "english_family_name",
    "fieldtype": "Data",
-   "label": "English Family Name",
-   "reqd": 1
+   "label": "English Family Name"
   },
   {
    "fieldname": "place_of_birth",
-   "fieldtype": "Date",
+   "fieldtype": "Data",
    "label": "Place of Birth",
    "reqd": 1
   },
@@ -695,21 +659,13 @@
    "fieldname": "nationality",
    "fieldtype": "Link",
    "label": "Nationality",
-   "options": "Nationality",
-   "reqd": 1
+   "options": "Nationality"
   },
   {
    "fieldname": "graduation_province",
-   "fieldtype": "Link",
+   "fieldtype": "Select",
    "label": "Graduation Province",
-   "options": "Province",
-   "reqd": 1
-  },
-  {
-   "fieldname": "sixth_grade_marks",
-   "fieldtype": "Table",
-   "label": "Sixth Grade Marks",
-   "options": "Sixth Grade Marks",
+   "options": "\u0628\u063a\u062f\u0627\u062f\n\u0646\u064a\u0646\u0648\u0649\n\u0627\u0644\u0628\u0635\u0631\u0629\n\u0623\u0631\u0628\u064a\u0644\n\u0627\u0644\u0623\u0646\u0628\u0627\u0631\n\u0643\u0631\u0643\u0648\u0643\n\u0635\u0644\u0627\u062d \u0627\u0644\u062f\u064a\u0646\n\u062f\u064a\u0627\u0644\u0649\n\u0630\u064a \u0642\u0627\u0631\n\u0627\u0644\u0646\u062c\u0641\n\u0643\u0631\u0628\u0644\u0627\u0621\n\u0628\u0627\u0628\u0644\n\u0648\u0627\u0633\u0637\n\u0645\u064a\u0633\u0627\u0646\n\u0627\u0644\u062f\u064a\u0648\u0627\u0646\u064a\u0629\n\u0627\u0644\u0645\u062b\u0646\u0649\n\u062f\u0647\u0648\u0643\n\u0627\u0644\u0633\u0644\u064a\u0645\u0627\u0646\u064a\u0629",
    "reqd": 1
   },
   {
@@ -758,12 +714,145 @@
    "fieldname": "wallet_number",
    "fieldtype": "Data",
    "label": "Wallet Number"
+  },
+  {
+   "depends_on": "eval:doc.college_1==\"\u0627\u0644\u062a\u0631\u0628\u064a\u0629 \u0627\u0644\u0627\u0633\u0627\u0633\u064a\u0629\";",
+   "fieldname": "department_1",
+   "fieldtype": "Select",
+   "label": "Department 1",
+   "options": "\u0642\u0633\u0645 \u0627\u0644\u0631\u064a\u0627\u0636\u064a\u0627\u062a\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0627\u0646\u0643\u0644\u064a\u0632\u064a\u0629\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+  },
+  {
+   "depends_on": "eval:doc.college_1==\"\u0627\u0644\u062a\u0631\u0628\u064a\u0629 \u0627\u0644\u0627\u0633\u0627\u0633\u064a\u0629\";",
+   "fieldname": "department_2",
+   "fieldtype": "Select",
+   "label": "Department 2",
+   "options": "\u0642\u0633\u0645 \u0627\u0644\u0631\u064a\u0627\u0636\u064a\u0627\u062a\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0627\u0646\u0643\u0644\u064a\u0632\u064a\u0629\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+  },
+  {
+   "depends_on": "eval:doc.college_1==\"\u0627\u0644\u062a\u0631\u0628\u064a\u0629 \u0627\u0644\u0627\u0633\u0627\u0633\u064a\u0629\";",
+   "fieldname": "department_3",
+   "fieldtype": "Select",
+   "label": "Department 3",
+   "options": "\u0642\u0633\u0645 \u0627\u0644\u0631\u064a\u0627\u0636\u064a\u0627\u062a\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0627\u0646\u0643\u0644\u064a\u0632\u064a\u0629\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0639\u0631\u0628\u064a\u0629"
+  },
+  {
+   "depends_on": "eval:doc.college_1==\"\u0627\u0644\u062a\u0631\u0628\u064a\u0629\";",
+   "fieldname": "department_4",
+   "fieldtype": "Select",
+   "label": "Department 4",
+   "options": "\u0642\u0633\u0645 \u0639\u0644\u0648\u0645 \u0627\u0644\u062d\u0627\u0633\u0648\u0628\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0627\u0646\u0643\u0644\u064a\u0632\u064a\u0629"
+  },
+  {
+   "fieldname": "accepted_department",
+   "fieldtype": "Select",
+   "label": "Accepted Department"
+  },
+  {
+   "fieldname": "section_break_ahzf",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "section_break_auvk",
+   "fieldtype": "Section Break"
+  },
+  {
+   "depends_on": "eval:doc.sub_field != \"Scientific Branch\"",
+   "fieldname": "history",
+   "fieldtype": "Float",
+   "label": "History"
+  },
+  {
+   "depends_on": "eval:doc.sub_field != \"Scientific Branch\"",
+   "fieldname": "geography",
+   "fieldtype": "Float",
+   "label": "Geography"
+  },
+  {
+   "fieldname": "mathmatics",
+   "fieldtype": "Float",
+   "label": "Mathmatics"
+  },
+  {
+   "fieldname": "column_break_laix",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "english",
+   "fieldtype": "Float",
+   "label": "English"
+  },
+  {
+   "fieldname": "arabic",
+   "fieldtype": "Float",
+   "label": "Arabic"
+  },
+  {
+   "fieldname": "islamics",
+   "fieldtype": "Float",
+   "label": "Islamics"
+  },
+  {
+   "fieldname": "column_break_skqy",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.sub_field == \"Scientific Branch\"",
+   "fieldname": "chemestry",
+   "fieldtype": "Float",
+   "label": "Chemestry"
+  },
+  {
+   "depends_on": "eval:doc.sub_field == \"Scientific Branch\"",
+   "fieldname": "physics",
+   "fieldtype": "Float",
+   "label": "Physics"
+  },
+  {
+   "depends_on": "eval:doc.sub_field == \"Scientific Branch\"",
+   "fieldname": "biology",
+   "fieldtype": "Float",
+   "label": "Biology"
+  },
+  {
+   "depends_on": "eval:doc.sub_field != \"Scientific Branch\"",
+   "fieldname": "economy",
+   "fieldtype": "Float",
+   "label": "Economy"
+  },
+  {
+   "fieldname": "french",
+   "fieldtype": "Float",
+   "label": "French"
+  },
+  {
+   "fieldname": "kurdish_language",
+   "fieldtype": "Float",
+   "label": "Kurdish Language"
+  },
+  {
+   "fieldname": "turkman_language",
+   "fieldtype": "Float",
+   "label": "Turkman Language"
+  },
+  {
+   "fieldname": "college_1",
+   "fieldtype": "Select",
+   "label": "College",
+   "options": "\u0627\u0644\u062a\u0645\u0631\u064a\u0636\n\u0627\u0644\u062a\u0631\u0628\u064a\u0629 \u0627\u0644\u0627\u0633\u0627\u0633\u064a\u0629\n\u0627\u0644\u062a\u0631\u0628\u064a\u0629"
+  },
+  {
+   "depends_on": "eval:doc.college_1==\"\u0627\u0644\u062a\u0631\u0628\u064a\u0629\";",
+   "fieldname": "department_5",
+   "fieldtype": "Select",
+   "label": "Department 5",
+   "options": "\u0642\u0633\u0645 \u0639\u0644\u0648\u0645 \u0627\u0644\u062d\u0627\u0633\u0648\u0628\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0627\u0646\u0643\u0644\u064a\u0632\u064a\u0629"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-01-16 10:00:22.141284",
+ "modified": "2025-10-08 19:12:06.539975",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",
@@ -819,6 +908,7 @@
    "write": 1
   }
  ],
+ "row_format": "Dynamic",
  "show_title_field_in_link": 1,
  "sort_field": "modified",
  "sort_order": "DESC",
