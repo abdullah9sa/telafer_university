@@ -18,6 +18,7 @@
   "english_third_name",
   "english_fourth_name",
   "english_family_name",
+  "ip",
   "column_break_ofzi",
   "mother_name",
   "mother_second_name",
@@ -158,20 +159,17 @@
   {
    "fieldname": "second_name",
    "fieldtype": "Data",
-   "label": "Second Name",
-   "reqd": 1
+   "label": "Second Name"
   },
   {
    "fieldname": "third_name",
    "fieldtype": "Data",
-   "label": "Third Name",
-   "reqd": 1
+   "label": "Third Name"
   },
   {
    "fieldname": "fourth_name",
    "fieldtype": "Data",
-   "label": "Fourth Name",
-   "reqd": 1
+   "label": "Fourth Name"
   },
   {
    "fieldname": "section_break_nzqh",
@@ -181,28 +179,24 @@
    "fieldname": "gender",
    "fieldtype": "Select",
    "label": "Gender",
-   "options": "Male\nFemale",
-   "reqd": 1
+   "options": "Male\nFemale"
   },
   {
    "fieldname": "date_of_birth",
    "fieldtype": "Date",
-   "label": "Date of Birth",
-   "reqd": 1
+   "label": "Date of Birth"
   },
   {
    "fieldname": "email",
    "fieldtype": "Data",
-   "label": "Email",
-   "reqd": 1
+   "label": "Email"
   },
   {
    "description": "Example : 07701111111",
    "fieldname": "phone_number",
    "fieldtype": "Data",
    "in_list_view": 1,
-   "label": "Phone Number",
-   "reqd": 1
+   "label": "Phone Number"
   },
   {
    "fieldname": "section_break_bhuq",
@@ -219,14 +213,12 @@
    "fieldname": "province",
    "fieldtype": "Select",
    "label": "Province",
-   "options": "\u0628\u063a\u062f\u0627\u062f\n\u0646\u064a\u0646\u0648\u0649\n\u0627\u0644\u0628\u0635\u0631\u0629\n\u0623\u0631\u0628\u064a\u0644\n\u0627\u0644\u0623\u0646\u0628\u0627\u0631\n\u0643\u0631\u0643\u0648\u0643\n\u0635\u0644\u0627\u062d \u0627\u0644\u062f\u064a\u0646\n\u062f\u064a\u0627\u0644\u0649\n\u0630\u064a \u0642\u0627\u0631\n\u0627\u0644\u0646\u062c\u0641\n\u0643\u0631\u0628\u0644\u0627\u0621\n\u0628\u0627\u0628\u0644\n\u0648\u0627\u0633\u0637\n\u0645\u064a\u0633\u0627\u0646\n\u0627\u0644\u062f\u064a\u0648\u0627\u0646\u064a\u0629\n\u0627\u0644\u0645\u062b\u0646\u0649\n\u062f\u0647\u0648\u0643\n\u0627\u0644\u0633\u0644\u064a\u0645\u0627\u0646\u064a\u0629",
-   "reqd": 1
+   "options": "\u0628\u063a\u062f\u0627\u062f\n\u0646\u064a\u0646\u0648\u0649\n\u0627\u0644\u0628\u0635\u0631\u0629\n\u0623\u0631\u0628\u064a\u0644\n\u0627\u0644\u0623\u0646\u0628\u0627\u0631\n\u0643\u0631\u0643\u0648\u0643\n\u0635\u0644\u0627\u062d \u0627\u0644\u062f\u064a\u0646\n\u062f\u064a\u0627\u0644\u0649\n\u0630\u064a \u0642\u0627\u0631\n\u0627\u0644\u0646\u062c\u0641\n\u0643\u0631\u0628\u0644\u0627\u0621\n\u0628\u0627\u0628\u0644\n\u0648\u0627\u0633\u0637\n\u0645\u064a\u0633\u0627\u0646\n\u0627\u0644\u062f\u064a\u0648\u0627\u0646\u064a\u0629\n\u0627\u0644\u0645\u062b\u0646\u0649\n\u062f\u0647\u0648\u0643\n\u0627\u0644\u0633\u0644\u064a\u0645\u0627\u0646\u064a\u0629"
   },
   {
    "fieldname": "address",
    "fieldtype": "Data",
-   "label": "Address",
-   "reqd": 1
+   "label": "Address"
   },
   {
    "fieldname": "documents_tab",
@@ -271,20 +263,17 @@
    "fieldname": "graduation_date",
    "fieldtype": "Select",
    "label": "Graduation Year",
-   "options": "2015/2016\n2016/2017\n2017/2018\n2018/2019\n2019/2020\n2020/2021\n2021/2022\n2022/2023\n2023/2024\n2024/2025\n2025/2026",
-   "reqd": 1
+   "options": "2015/2016\n2016/2017\n2017/2018\n2018/2019\n2019/2020\n2020/2021\n2021/2022\n2022/2023\n2023/2024\n2024/2025\n2025/2026"
   },
   {
    "fieldname": "6th_grade_avarage",
    "fieldtype": "Float",
-   "label": "6th Grade Avarage Before Addition",
-   "reqd": 1
+   "label": "6th Grade Avarage Before Addition"
   },
   {
    "fieldname": "high_school_certificate",
    "fieldtype": "Attach",
-   "label": "High School Certificate",
-   "reqd": 1
+   "label": "High School Certificate"
   },
   {
    "fieldname": "emergency_contact_section",
@@ -294,15 +283,13 @@
   {
    "fieldname": "emergency_contact_name",
    "fieldtype": "Data",
-   "label": "Emergency Contact Name",
-   "reqd": 1
+   "label": "Emergency Contact Name"
   },
   {
    "fieldname": "relation",
    "fieldtype": "Select",
    "label": "Relation",
-   "options": "Father\nMother\nBrother\nSister\nUncle\nHusband/Wife",
-   "reqd": 1
+   "options": "Father\nMother\nBrother\nSister\nUncle\nHusband/Wife"
   },
   {
    "fieldname": "column_break_kkkc",
@@ -311,14 +298,12 @@
   {
    "fieldname": "emergency_phone_number",
    "fieldtype": "Data",
-   "label": "Emergency Phone Number",
-   "reqd": 1
+   "label": "Emergency Phone Number"
   },
   {
    "fieldname": "emergency_email",
    "fieldtype": "Data",
-   "label": "Emergency Email",
-   "reqd": 1
+   "label": "Emergency Email"
   },
   {
    "fieldname": "status",
@@ -340,8 +325,7 @@
   {
    "fieldname": "mother_name",
    "fieldtype": "Data",
-   "label": "Mother First Name",
-   "reqd": 1
+   "label": "Mother First Name"
   },
   {
    "fieldname": "section_break_fgyb",
@@ -352,15 +336,13 @@
    "fieldname": "admission_channel",
    "fieldtype": "Select",
    "label": "Admission Channel",
-   "options": "General channel\nMartyrs\nTeachers\nAthletes\nCertificate holders\nDistinguished\nPolitical prisoners\nExpatriates\nStudents of Kurdistan Region",
-   "reqd": 1
+   "options": "General channel\nMartyrs\nTeachers\nAthletes\nCertificate holders\nDistinguished\nPolitical prisoners\nExpatriates\nStudents of Kurdistan Region"
   },
   {
    "fieldname": "religion",
    "fieldtype": "Select",
    "label": "Religion",
-   "options": "Muslim\nChristian\nMandaeism\nYazidis\nOther",
-   "reqd": 1
+   "options": "Muslim\nChristian\nMandaeism\nYazidis\nOther"
   },
   {
    "fieldname": "column_break_xyal",
@@ -370,15 +352,13 @@
    "fieldname": "ethnicity",
    "fieldtype": "Select",
    "label": "Ethnicity",
-   "options": "Arabs\nKurds\nTurkmen\nAssyrians\nArmenians\nYazidis\nShabaks\nMandaeans",
-   "reqd": 1
+   "options": "Arabs\nKurds\nTurkmen\nAssyrians\nArmenians\nYazidis\nShabaks\nMandaeans"
   },
   {
    "fieldname": "round",
    "fieldtype": "Select",
    "label": "Round",
-   "options": "First\nSecond\nThird",
-   "reqd": 1
+   "options": "First\nSecond\nThird"
   },
   {
    "fieldname": "column_break_srar",
@@ -387,8 +367,7 @@
   {
    "fieldname": "school_name",
    "fieldtype": "Data",
-   "label": "School Name",
-   "reqd": 1
+   "label": "School Name"
   },
   {
    "fieldname": "issue_date",
@@ -428,22 +407,19 @@
   {
    "fieldname": "family_name",
    "fieldtype": "Data",
-   "label": "Family Name",
-   "reqd": 1
+   "label": "Family Name"
   },
   {
    "fieldname": "any_parent_deceased",
    "fieldtype": "Select",
    "label": "Any Parent Deceased",
-   "options": "None\nFather\nMother",
-   "reqd": 1
+   "options": "None\nFather\nMother"
   },
   {
    "fieldname": "employee",
    "fieldtype": "Select",
    "label": "Employee",
-   "options": "No\nYes",
-   "reqd": 1
+   "options": "No\nYes"
   },
   {
    "fieldname": "column_break_ajww",
@@ -457,8 +433,7 @@
    "fieldname": "criminal_conviction",
    "fieldtype": "Select",
    "label": "Criminal Conviction",
-   "options": "No\nYes",
-   "reqd": 1
+   "options": "No\nYes"
   },
   {
    "fieldname": "blood_type",
@@ -470,15 +445,13 @@
    "fieldname": "sub_field",
    "fieldtype": "Select",
    "label": "Sub Field",
-   "options": "Scientific Branch\nLiterary Branch",
-   "reqd": 1
+   "options": "Scientific Branch\nLiterary Branch"
   },
   {
    "fieldname": "study_type",
    "fieldtype": "Select",
    "label": "Study Type",
-   "options": "Morning\nEvening",
-   "reqd": 1
+   "options": "Morning\nEvening"
   },
   {
    "fieldname": "column_break_ramo",
@@ -487,14 +460,12 @@
   {
    "fieldname": "6th_grade_avarage_after_addition",
    "fieldtype": "Float",
-   "label": "6th Grade Avarage After Addition",
-   "reqd": 1
+   "label": "6th Grade Avarage After Addition"
   },
   {
    "fieldname": "exam_number",
    "fieldtype": "Data",
-   "label": "Exam Number",
-   "reqd": 1
+   "label": "Exam Number"
   },
   {
    "fieldname": "section_break_brpo",
@@ -508,8 +479,7 @@
   {
    "fieldname": "disrict",
    "fieldtype": "Data",
-   "label": "Disrict",
-   "reqd": 1
+   "label": "Disrict"
   },
   {
    "depends_on": "eval:doc.id_type == \"Civil ID\"",
@@ -549,14 +519,12 @@
   {
    "fieldname": "residance__number",
    "fieldtype": "Data",
-   "label": "Residance  Number",
-   "reqd": 1
+   "label": "Residance  Number"
   },
   {
    "fieldname": "residance_form_number",
    "fieldtype": "Data",
-   "label": "Residance Form Number",
-   "reqd": 1
+   "label": "Residance Form Number"
   },
   {
    "fieldname": "column_break_pxin",
@@ -565,14 +533,12 @@
   {
    "fieldname": "residance_card_issuer",
    "fieldtype": "Data",
-   "label": "Residance Card Issuer",
-   "reqd": 1
+   "label": "Residance Card Issuer"
   },
   {
    "fieldname": "residance_formation_date",
    "fieldtype": "Date",
-   "label": "Residance Formation Date",
-   "reqd": 1
+   "label": "Residance Formation Date"
   },
   {
    "fieldname": "qr_code",
@@ -617,8 +583,7 @@
   {
    "fieldname": "place_of_birth",
    "fieldtype": "Data",
-   "label": "Place of Birth",
-   "reqd": 1
+   "label": "Place of Birth"
   },
   {
    "fieldname": "column_break_ofzi",
@@ -627,33 +592,28 @@
   {
    "fieldname": "mother_second_name",
    "fieldtype": "Data",
-   "label": "Mother Second Name",
-   "reqd": 1
+   "label": "Mother Second Name"
   },
   {
    "fieldname": "mother_third_name",
    "fieldtype": "Data",
-   "label": "Mother Third Name",
-   "reqd": 1
+   "label": "Mother Third Name"
   },
   {
    "fieldname": "relationship_status",
    "fieldtype": "Select",
    "label": "Relationship Status",
-   "options": "Single\nMarried\nDivorced\nArmal",
-   "reqd": 1
+   "options": "Single\nMarried\nDivorced\nArmal"
   },
   {
    "fieldname": "parent_name",
    "fieldtype": "Data",
-   "label": "Parent Name",
-   "reqd": 1
+   "label": "Parent Name"
   },
   {
    "fieldname": "parent_ocupation",
    "fieldtype": "Data",
-   "label": "Parent Ocupation",
-   "reqd": 1
+   "label": "Parent Ocupation"
   },
   {
    "fieldname": "nationality",
@@ -665,8 +625,7 @@
    "fieldname": "graduation_province",
    "fieldtype": "Select",
    "label": "Graduation Province",
-   "options": "\u0628\u063a\u062f\u0627\u062f\n\u0646\u064a\u0646\u0648\u0649\n\u0627\u0644\u0628\u0635\u0631\u0629\n\u0623\u0631\u0628\u064a\u0644\n\u0627\u0644\u0623\u0646\u0628\u0627\u0631\n\u0643\u0631\u0643\u0648\u0643\n\u0635\u0644\u0627\u062d \u0627\u0644\u062f\u064a\u0646\n\u062f\u064a\u0627\u0644\u0649\n\u0630\u064a \u0642\u0627\u0631\n\u0627\u0644\u0646\u062c\u0641\n\u0643\u0631\u0628\u0644\u0627\u0621\n\u0628\u0627\u0628\u0644\n\u0648\u0627\u0633\u0637\n\u0645\u064a\u0633\u0627\u0646\n\u0627\u0644\u062f\u064a\u0648\u0627\u0646\u064a\u0629\n\u0627\u0644\u0645\u062b\u0646\u0649\n\u062f\u0647\u0648\u0643\n\u0627\u0644\u0633\u0644\u064a\u0645\u0627\u0646\u064a\u0629",
-   "reqd": 1
+   "options": "\u0628\u063a\u062f\u0627\u062f\n\u0646\u064a\u0646\u0648\u0649\n\u0627\u0644\u0628\u0635\u0631\u0629\n\u0623\u0631\u0628\u064a\u0644\n\u0627\u0644\u0623\u0646\u0628\u0627\u0631\n\u0643\u0631\u0643\u0648\u0643\n\u0635\u0644\u0627\u062d \u0627\u0644\u062f\u064a\u0646\n\u062f\u064a\u0627\u0644\u0649\n\u0630\u064a \u0642\u0627\u0631\n\u0627\u0644\u0646\u062c\u0641\n\u0643\u0631\u0628\u0644\u0627\u0621\n\u0628\u0627\u0628\u0644\n\u0648\u0627\u0633\u0637\n\u0645\u064a\u0633\u0627\u0646\n\u0627\u0644\u062f\u064a\u0648\u0627\u0646\u064a\u0629\n\u0627\u0644\u0645\u062b\u0646\u0649\n\u062f\u0647\u0648\u0643\n\u0627\u0644\u0633\u0644\u064a\u0645\u0627\u0646\u064a\u0629"
   },
   {
    "fieldname": "ration_card",
@@ -690,8 +649,7 @@
    "fieldname": "id_type",
    "fieldtype": "Select",
    "label": "ID Type",
-   "options": "National Card\nCivil ID",
-   "reqd": 1
+   "options": "National Card\nCivil ID"
   },
   {
    "fieldname": "id_back",
@@ -847,12 +805,20 @@
    "fieldtype": "Select",
    "label": "Department 5",
    "options": "\u0642\u0633\u0645 \u0639\u0644\u0648\u0645 \u0627\u0644\u062d\u0627\u0633\u0648\u0628\n\u0642\u0633\u0645 \u0627\u0644\u0644\u063a\u0629 \u0627\u0644\u0627\u0646\u0643\u0644\u064a\u0632\u064a\u0629"
+  },
+  {
+   "fieldname": "ip",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "IP",
+   "read_only": 1,
+   "unique": 1
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-08 19:12:06.539975",
+ "modified": "2025-10-10 13:22:47.106123",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",

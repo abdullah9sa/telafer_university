@@ -13,7 +13,7 @@ class Student(Document):
             # Check if a Student record already exists for this user
             if frappe.db.exists("Student", {"owner": self.owner}):
                 frappe.throw(_("A Student record already exists for this user."))
-    
+
     def before_save(self):
 
         print(f"Starting after_insert for Student: {self.name}")
