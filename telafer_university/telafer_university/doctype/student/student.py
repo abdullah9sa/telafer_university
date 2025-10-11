@@ -1,4 +1,3 @@
-
 import frappe
 from frappe.model.document import Document
 from frappe import _
@@ -42,7 +41,7 @@ class Student(Document):
                     print(f"Response status code: {response.status_code}")
                     if response.status_code == 200:
                         print("Download successful")
-                        filename = os.path.basename(self.qr_code)
+                        filename = f"qr_code_{self.name}.png"
                         print(f"Filename: {filename}")
                         print("Creating new file document...")
                         file_doc = frappe.get_doc({
