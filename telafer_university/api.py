@@ -1,4 +1,3 @@
-# return PDF for the doc matching exam_number
 import re
 import frappe
 from frappe.utils.pdf import get_pdf
@@ -16,7 +15,7 @@ RTL_STYLE = """
   th, td { text-align:right; vertical-align:top; }
   .label { background:#f9f9f9; font-weight:700; }
   .ltr { direction:ltr; text-align:left; unicode-bidi: plaintext; }
-  img { display:inline-block; }
+  img { display:inline-block; max-width:100%; height:auto; }
 </style>
 """
 
@@ -53,42 +52,17 @@ def student_pdf(
 
     html = frappe.get_print(doctype, name, format, no_letterhead=int(no_letterhead))
 
-    # strip empty/broken images
+    # Clean up broken/invalid images more aggressively
+    # Remove images with empty, None, null, or relative-only paths
+    html = re.sub(r'<img[^>]*src=["\'](?:|None|null|/files/)["\'][^>]*/?>', "", html, flags=re.IGNORECASE)
+    
+    # Remove images with data URIs that might be malformed
+    html = re.sub(r'<img[^>]*src=["\']data:(?!image/)[^"\']*["\'][^>]*/?>', "", html, flags=re.IGNORECASE)
+    
+    # Remove any remaining img tags without valid src
+    html = re.sub(r'<img(?![^>]*src=["\']https?://)[^>]*/?>', "", html, flags=re.IGNORECASE)
 
-        # Remove images with empty src, None, null, or /files/
-    html = re.sub(r'<img[^>]*src=["\'](?:|None|null|/files/)["\'][^>]*>', "", html)
-
-    # Remove images with unreachable src (local or remote)
-    def is_image_accessible(src):
-        import os
-        import requests
-        if src.startswith("http://") or src.startswith("https://"):
-            try:
-                resp = requests.head(src, timeout=2)
-                return resp.status_code == 200
-            except Exception:
-                return False
-        # Local file path (relative to sites or public)
-        local_path = src
-        if src.startswith("/files/"):
-            local_path = os.path.join(frappe.get_site_path("public"), src.lstrip("/"))
-        elif src.startswith("/assets/"):
-            local_path = os.path.join(frappe.get_site_path("public"), src.lstrip("/"))
-        return os.path.exists(local_path)
-
-    def remove_broken_images(html):
-        def repl(match):
-            src_match = re.search(r'src=["\']([^"\']+)["\']', match.group(0))
-            src = src_match.group(1) if src_match else ""
-            if not is_image_accessible(src):
-                # Optionally, replace with a placeholder image or just remove
-                return ""  # Remove broken image
-            return match.group(0)
-        return re.sub(r'<img[^>]*src=["\']([^"\']+)["\'][^>]*>', repl, html)
-
-    html = remove_broken_images(html)
-
-    # enforce RTL shell + fonts
+    # Enforce RTL shell + fonts
     shell_start = '<html lang="ar" dir="rtl"><head><meta charset="UTF-8">'
     shell_end = "</head><body>{BODY}</body></html>"
     if "<html" in html:
@@ -97,7 +71,24 @@ def student_pdf(
     else:
         html = shell_start + RTL_STYLE + shell_end.replace("{BODY}", html)
 
-    pdf = get_pdf(html, options={"page-size": "A4", "encoding": "UTF-8"})
+    # Use failsafe PDF generation with additional options
+    pdf_options = {
+        "page-size": "A4",
+        "encoding": "UTF-8",
+        "no-stop-slow-scripts": True,
+        "enable-local-file-access": True,
+        "load-error-handling": "ignore",
+        "load-media-error-handling": "ignore",
+    }
+    
+    try:
+        pdf = get_pdf(html, options=pdf_options)
+    except Exception as e:
+        # If PDF generation fails due to images, strip ALL images and retry
+        frappe.log_error(f"PDF generation failed, retrying without images: {str(e)}", "student_pdf")
+        html_no_img = re.sub(r'<img[^>]*/?>', "", html, flags=re.IGNORECASE)
+        pdf = get_pdf(html_no_img, options=pdf_options)
+    
     frappe.local.response.filename = f"{doctype}-{name}.pdf"
     frappe.local.response.filecontent = pdf
     frappe.local.response.type = "download"
