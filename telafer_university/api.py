@@ -54,7 +54,39 @@ def student_pdf(
     html = frappe.get_print(doctype, name, format, no_letterhead=int(no_letterhead))
 
     # strip empty/broken images
+
+        # Remove images with empty src, None, null, or /files/
     html = re.sub(r'<img[^>]*src=["\'](?:|None|null|/files/)["\'][^>]*>', "", html)
+
+    # Remove images with unreachable src (local or remote)
+    def is_image_accessible(src):
+        import os
+        import requests
+        if src.startswith("http://") or src.startswith("https://"):
+            try:
+                resp = requests.head(src, timeout=2)
+                return resp.status_code == 200
+            except Exception:
+                return False
+        # Local file path (relative to sites or public)
+        local_path = src
+        if src.startswith("/files/"):
+            local_path = os.path.join(frappe.get_site_path("public"), src.lstrip("/"))
+        elif src.startswith("/assets/"):
+            local_path = os.path.join(frappe.get_site_path("public"), src.lstrip("/"))
+        return os.path.exists(local_path)
+
+    def remove_broken_images(html):
+        def repl(match):
+            src_match = re.search(r'src=["\']([^"\']+)["\']', match.group(0))
+            src = src_match.group(1) if src_match else ""
+            if not is_image_accessible(src):
+                # Optionally, replace with a placeholder image or just remove
+                return ""  # Remove broken image
+            return match.group(0)
+        return re.sub(r'<img[^>]*src=["\']([^"\']+)["\'][^>]*>', repl, html)
+
+    html = remove_broken_images(html)
 
     # enforce RTL shell + fonts
     shell_start = '<html lang="ar" dir="rtl"><head><meta charset="UTF-8">'
