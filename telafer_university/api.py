@@ -3,20 +3,30 @@ import os
 import frappe
 from frappe.utils.pdf import get_pdf
 
-RTL_STYLE = """
+def get_rtl_style():
+    """Generate RTL style with safe font loading"""
+    font_css = ""
+    # Only include fonts if they exist
+    regular_font = frappe.get_site_path('public', 'assets', 'fonts', 'NotoNaskhArabic-Regular.ttf')
+    bold_font = frappe.get_site_path('public', 'assets', 'fonts', 'NotoNaskhArabic-Bold.ttf')
+    
+    if os.path.exists(regular_font):
+        font_css += '@font-face { font-family: "NotoNaskh"; src: url("file://' + regular_font + '") format("truetype"); }\n'
+    if os.path.exists(bold_font):
+        font_css += '@font-face { font-family: "NotoNaskh"; src: url("file://' + bold_font + '") format("truetype"); font-weight:700; }\n'
+    
+    return f"""
 <style>
-  @font-face { font-family: "NotoNaskh"; src: url("/assets/fonts/NotoNaskhArabic-Regular.ttf") format("truetype"); }
-  @font-face { font-family: "NotoNaskh"; src: url("/assets/fonts/NotoNaskhArabic-Bold.ttf") format("truetype"); font-weight:700; }
+  {font_css}
+  html, body {{ direction: rtl; unicode-bidi: plaintext; }}
+  body {{ font-family: "NotoNaskh","Amiri","DejaVu Sans","Arial",sans-serif; font-size:12pt; }}
 
-  html, body { direction: rtl; unicode-bidi: plaintext; }
-  body { font-family: "NotoNaskh","Amiri","DejaVu Sans","Arial",sans-serif; font-size:12pt; }
-
-  .print-format, table { direction: rtl; }
-  table { width:100%; border-collapse:collapse; table-layout:fixed; }
-  th, td { text-align:right; vertical-align:top; }
-  .label { background:#f9f9f9; font-weight:700; }
-  .ltr { direction:ltr; text-align:left; unicode-bidi: plaintext; }
-  img { display:inline-block; max-width:100%; height:auto; }
+  .print-format, table {{ direction: rtl; }}
+  table {{ width:100%; border-collapse:collapse; table-layout:fixed; }}
+  th, td {{ text-align:right; vertical-align:top; }}
+  .label {{ background:#f9f9f9; font-weight:700; }}
+  .ltr {{ direction:ltr; text-align:left; unicode-bidi: plaintext; }}
+  img {{ display:inline-block; max-width:100%; height:auto; }}
 </style>
 """
 
@@ -57,13 +67,14 @@ def student_pdf(
     html = clean_broken_images(html)
 
     # Enforce RTL shell + fonts
+    rtl_style = get_rtl_style()
     shell_start = '<html lang="ar" dir="rtl"><head><meta charset="UTF-8">'
     shell_end = "</head><body>{BODY}</body></html>"
     if "<html" in html:
         html = re.sub(r"<html([^>]*?)>", r'<html\1 lang="ar" dir="rtl">', html)
-        html = html.replace("<head>", f"<head>{RTL_STYLE}")
+        html = html.replace("<head>", f"<head>{rtl_style}")
     else:
-        html = shell_start + RTL_STYLE + shell_end.replace("{BODY}", html)
+        html = shell_start + rtl_style + shell_end.replace("{BODY}", html)
 
     # Use failsafe PDF generation with additional options
     pdf_options = {
@@ -73,6 +84,8 @@ def student_pdf(
         "enable-local-file-access": True,
         "load-error-handling": "ignore",
         "load-media-error-handling": "ignore",
+        "disable-external-links": True,
+        "disable-javascript": True,
     }
     
     try:
@@ -103,20 +116,22 @@ def clean_broken_images(html):
         if not src or src.lower() in ['none', 'null', 'undefined']:
             return ""
         
-        # Skip external URLs
+        # Remove external URLs (they cause network errors)
         if src.startswith(('http://', 'https://')):
-            return img_tag
+            return ""
         
-        # Skip valid data URIs
+        # Keep valid data URIs
         if src.startswith('data:image/'):
             return img_tag
         
         # Check local file paths
-        if src.startswith('/files/'):
+        if src.startswith('/files/') or src.startswith('/assets/'):
             try:
                 file_path = frappe.get_site_path('public', src.lstrip('/'))
                 if os.path.exists(file_path):
-                    return img_tag
+                    # Convert to absolute file:// URL for wkhtmltopdf
+                    abs_path = os.path.abspath(file_path)
+                    return img_tag.replace(src, f'file://{abs_path}')
             except:
                 pass
             return ""  # Remove non-existent file
