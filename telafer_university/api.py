@@ -11,9 +11,6 @@ def student_pdf(
     no_letterhead: int = 1,
 ):
     doctype="Student"
-    print("------------------------------------------------")
-    print(exam_number)
-    print(exam_number)
 
     if not doctype:
         frappe.throw("Missing doctype.")
@@ -40,7 +37,12 @@ def student_pdf(
     frappe.local.jenv = None
 
     html = frappe.get_print(doctype, name, format, no_letterhead=int(no_letterhead))
-    html = re.sub(r'<img[^>]*src=["\'](?:|None|null|/files/)["\'][^>]*>', '', html)
+    
+    # Remove all problematic images to prevent PDF generation failures
+    html = re.sub(r'<img[^>]*src=["\'](?:|None|null|/files/|data:)["\'][^>]*>', '', html)
+    html = re.sub(r'<img[^>]*src=["\'][^"\']*/files/[^"\']*/[^"\']*.(?:jpg|jpeg|png|gif|bmp|svg)["\'][^>]*>', '', html)
+    html = re.sub(r'<img[^>]*>', '', html)  # Remove any remaining img tags
+    
     if '<html' in html:
         html = re.sub(r'<html([^>]*?)>', r'<html\1 lang="ar" dir="rtl">', html)
     else:
