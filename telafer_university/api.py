@@ -1,4 +1,5 @@
 import re
+import os
 import frappe
 from frappe.utils.pdf import get_pdf
 
@@ -52,15 +53,8 @@ def student_pdf(
 
     html = frappe.get_print(doctype, name, format, no_letterhead=int(no_letterhead))
 
-    # Clean up broken/invalid images more aggressively
-    # Remove images with empty, None, null, or relative-only paths
-    html = re.sub(r'<img[^>]*src=["\'](?:|None|null|/files/)["\'][^>]*/?>', "", html, flags=re.IGNORECASE)
-    
-    # Remove images with data URIs that might be malformed
-    html = re.sub(r'<img[^>]*src=["\']data:(?!image/)[^"\']*["\'][^>]*/?>', "", html, flags=re.IGNORECASE)
-    
-    # Remove any remaining img tags without valid src
-    html = re.sub(r'<img(?![^>]*src=["\']https?://)[^>]*/?>', "", html, flags=re.IGNORECASE)
+    # Clean broken images to prevent PDF generation errors
+    html = clean_broken_images(html)
 
     # Enforce RTL shell + fonts
     shell_start = '<html lang="ar" dir="rtl"><head><meta charset="UTF-8">'
@@ -92,3 +86,44 @@ def student_pdf(
     frappe.local.response.filename = f"{doctype}-{name}.pdf"
     frappe.local.response.filecontent = pdf
     frappe.local.response.type = "download"
+
+
+def clean_broken_images(html):
+    """Remove broken or non-existent images from HTML to prevent PDF generation issues"""
+    def check_image(match):
+        img_tag = match.group(0)
+        src_match = re.search(r'src=["\']([^"\'][^>]*?)["\']', img_tag, re.IGNORECASE)
+        
+        if not src_match:
+            return ""  # Remove img without src
+        
+        src = src_match.group(1).strip()
+        
+        # Remove empty, None, null sources
+        if not src or src.lower() in ['none', 'null', 'undefined']:
+            return ""
+        
+        # Skip external URLs
+        if src.startswith(('http://', 'https://')):
+            return img_tag
+        
+        # Skip valid data URIs
+        if src.startswith('data:image/'):
+            return img_tag
+        
+        # Check local file paths
+        if src.startswith('/files/'):
+            try:
+                file_path = frappe.get_site_path('public', src.lstrip('/'))
+                if os.path.exists(file_path):
+                    return img_tag
+            except:
+                pass
+            return ""  # Remove non-existent file
+        
+        # Remove other invalid sources
+        return ""
+    
+    # Apply check to all img tags
+    html = re.sub(r'<img[^>]*/?>', check_image, html, flags=re.IGNORECASE)
+    return html
