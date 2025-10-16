@@ -64,6 +64,7 @@
   "sub_field",
   "study_type",
   "exam_number",
+  "kurdstan_student",
   "column_break_ramo",
   "graduation_province",
   "graduation_date",
@@ -883,12 +884,18 @@
    "fieldname": "grammer",
    "fieldtype": "Float",
    "label": "Grammer"
+  },
+  {
+   "default": "0",
+   "fieldname": "kurdstan_student",
+   "fieldtype": "Check",
+   "label": "Kurdstan Student"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-15 22:06:03.053034",
+ "modified": "2025-10-16 14:08:29.092587",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",
