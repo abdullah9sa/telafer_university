@@ -77,6 +77,7 @@
   "english",
   "arabic",
   "islamics",
+  "arabic_and_islamics",
   "column_break_skqy",
   "chemestry",
   "physics",
@@ -753,11 +754,13 @@
    "label": "English"
   },
   {
+   "depends_on": "eval:doc.kurdstan_student == 0",
    "fieldname": "arabic",
    "fieldtype": "Float",
    "label": "Arabic"
   },
   {
+   "depends_on": "eval:doc.kurdstan_student == 0",
    "fieldname": "islamics",
    "fieldtype": "Float",
    "label": "Islamics"
@@ -890,12 +893,18 @@
    "fieldname": "kurdstan_student",
    "fieldtype": "Check",
    "label": "Kurdstan Student"
+  },
+  {
+   "depends_on": "eval:doc.kurdstan_student == 1",
+   "fieldname": "arabic_and_islamics",
+   "fieldtype": "Float",
+   "label": "Arabic and Islamics"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2025-10-16 14:08:29.092587",
+ "modified": "2025-10-17 11:06:30.356972",
  "modified_by": "Administrator",
  "module": "Telafer University",
  "name": "Student",
